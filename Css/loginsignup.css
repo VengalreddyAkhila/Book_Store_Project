@@ -60,10 +60,11 @@ input{
     margin-top: 15px;
     background-color: darkred;
     color: white;
+    border: none;
 }
 a {
     text-decoration: none;
-    color: gainsboro;
+    color: black;
     margin-bottom: 10%;
 }
 a:hover{
@@ -103,4 +104,182 @@ a:hover{
     background-color: blue;
     color: white;
     border: transparent;
+}
+@media screen and (max-width:1024px) and (min-width:900px) {
+   
+    .form-container{
+    
+        width: 50%;
+        height: 25%;
+    }
+    .loginsignup{
+        
+        height: 30%;
+        width: 30%;
+        margin-left: 28%;
+    }
+}
+@media screen and (max-width:900px) and (min-width:800px){
+    .form{
+      
+        padding-left: 10%;
+    }
+    .form-container{
+     
+        width: 50%;
+        height: 30%;
+       margin-top: 60%;
+    }
+    .loginsignup{
+      
+        height: 40%;
+        width: 40%;
+        margin-left: 32%;
+        margin-top: 50%;
+    }
+}
+@media screen and (max-width:800px){
+    .form{
+     
+        padding-left: 10%;
+    }
+    .form-container{
+  
+        width: 50%;
+        height: 30%;
+       
+    }
+    .loginsignup{
+   
+        height: 40%;
+        width: 40%;
+        margin-left: 32%;
+
+    }
+}
+@media screen and (max-width:600px){
+    .form{
+        
+        padding-left: 10%;
+    }
+    .form-container{
+      
+        width: 50%;
+        height: 30%;
+        margin-top: 50%;
+    }
+    .loginsignup{
+      
+        height: 40%;
+        width: 35%;
+        margin-left: 32%;
+        margin-top: 35%;
+    }
+    input{
+        width: 100px;
+        height: 15px;
+        padding-top: 5px;
+        margin-bottom: 10px;
+     
+    }
+    label{
+       
+        font-size: 12px;
+    }
+    .signup-btn, .login-btn{
+        height: 20px;
+        margin-top: 15px;
+        background-color: darkred;
+        color: white;
+        border: none;
+    }
+    .btns{
+    
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10%;
+        height: 20px;
+        width: 100%;
+        font-size: 1rem;
+        
+    }
+    .links{
+        font-size: 10px;
+    }
+    .text{
+        font-size: 8px;
+    }
+    .or{
+        font-size: 10px;
+    }
+    .forget-mail{
+        font-size: 10px;
+        margin-left: 30%;
+    }
+    .facebook-btn , .Google-btn{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:400px){
+    .form{
+        
+        padding-left: 10%;
+    }
+    .form-container{
+     
+        width: 50%;
+        height: 30%;
+        margin-top: 50%;
+    }
+    .loginsignup{
+     
+        height: 40%;
+        width: 40%;
+        margin-left: 32%;
+        margin-top: 35%;
+    }
+ 
+    input{
+        width: 80px;
+        height: 15px;
+        padding-top: 5px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+    label{
+        margin-left: 20px;
+        font-size: 12px;
+    }
+    .signup-btn, .login-btn{
+        height: 20px;
+        margin-top: 15px;
+        background-color: darkred;
+        color: white;
+        border: none;
+    }
+    .btns{
+    
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10%;
+        height: 20px;
+        width: 100%;
+        font-size: 1rem;
+        
+    }
+    .links{
+        font-size: 10px;
+    }
+    .text{
+        font-size: 8px;
+    }
+    .or{
+        font-size: 10px;
+    }
+    .forget-mail{
+        font-size: 10px;
+    }
+    .facebook-btn , .Google-btn{
+        font-size: 10px;
+    }
 }
