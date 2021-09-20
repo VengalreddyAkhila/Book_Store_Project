@@ -1,0 +1,74 @@
+
+.form{
+    border: 2px solid red;
+    height: 100%;
+    padding-left: 20%;
+    display: flex;
+    flex-direction: row;
+    background-color: grey;
+
+}
+.book-img {
+    border: 2px solid green;
+    width: 55%;
+    height: 70%;
+    border-radius: 100%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+.text{
+    margin-left:12%;
+}
+.form-container{
+    border:2px solid yellow;
+    margin-top: 16%;
+    width: 40%;
+    height: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 8px;
+    border-radius: 10px;
+  
+}
+.loginsignup{
+    border: 2px solid greenyellow;
+    margin-top: 10%;
+    width: 25%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-left: 22%;
+    background-color: white;
+    border-radius: 10px;
+}
+.labels{
+   display: flex;
+   flex-direction: column;
+ 
+}
+input{
+    width: 200px;
+    height: 35px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+.signup-btn{
+    height: 30px;
+    margin-top: 15px;
+    background-color: darkred;
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10%;
+}
+.pages{
+ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
