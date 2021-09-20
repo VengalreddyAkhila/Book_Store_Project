@@ -1,6 +1,6 @@
 
 .form{
-    border: 2px solid red;
+  
     height: 100%;
     padding-left: 20%;
     display: flex;
@@ -20,7 +20,7 @@
     margin-left:12%;
 }
 .form-container{
-    border:2px solid yellow;
+   
     margin-top: 16%;
     width: 40%;
     height: 50%;
@@ -32,7 +32,7 @@
   
 }
 .loginsignup{
-    border: 2px solid greenyellow;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     margin-top: 10%;
     width: 25%;
     height: 60%;
@@ -55,7 +55,7 @@ input{
     padding-top: 5px;
     margin-bottom: 10px;
 }
-.signup-btn{
+.signup-btn, .login-btn{
     height: 30px;
     margin-top: 15px;
     background-color: darkred;
@@ -63,12 +63,44 @@ input{
 }
 a {
     text-decoration: none;
-    color: black;
+    color: gainsboro;
     margin-bottom: 10%;
+}
+a:hover{
+    color: darkred;
+    text-decoration:underline;
 }
 .pages{
  
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.links:hover{
+    text-decoration: underline;
+    color: black;
+}
+.forget-mail{
+    margin-left: 40%;
+}
+.forget-mail:hover{
+    color: blue;
+}
+.or{
+    text-align: center;
+    margin-top: 5%;
+}
+.btns{
+    
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    height: 30px;
+    width: 100%;
+    
+}
+.facebook-btn:hover , .Google-btn:hover{
+    background-color: blue;
+    color: white;
+    border: transparent;
 }
