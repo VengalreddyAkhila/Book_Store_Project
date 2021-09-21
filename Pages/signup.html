@@ -9,7 +9,7 @@
     <title>Book Store</title>
 </head>
 <body>
-    <form class="form">
+    <form class="form" id="form">
         <div class="form-container">
         <img class="book-img" src="../Assests/bookshop.png" alt="">
         <h1 class="text">ONLINE BOOK SHOPPING </h1>
@@ -21,21 +21,29 @@
                 <a class="links" href="../Pages/login.html" style="color: gainsboro;">LOGIN</a>
                 <a class="links" href="#">SIGNUP</a>
                 </div>
-                <label for="search">FullName</label>
-                <input type="search" id="search" name="search">
-                <label for="search">Password</label>
-                <input type="search" id="search" name="search">
-                <label for="search">Email  Id</label>
-                <input type="search" id="search" name="search">
-                <label for="search">Mobile Number</label>
-                <input type="search" id="search" name="search">
+                <label for="fullname">FullName</label>
+                <input type="name" id="fullname" name="fullname">
+                <error-output class="text-error" id="fullname_error" for="text"></error-output>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <error-output class="text-error" id="password_error" for="text"></error-output>
+
+                <label for="email">Email  Id</label>
+                <input type="email" id="email" name="email">
+                <error-output class="text-error" id="email_error" for="text"></error-output>
+
+                <label for="mobilenumber">Mobile Number</label>
+                <input type="mobilenumber" id="mobilenumber" name="mobilenumber">
+                <error-output class="text-error" id="number_error" for="text"></error-output>
                 <button class="signup-btn">SignUp</button>
             </div>
             
         </div>
     </form>
 
-
+    <script   src="../js/signuppage.js"></script>
+    <script   src="../js/login.js"></script>
 
     </body>
     </html>

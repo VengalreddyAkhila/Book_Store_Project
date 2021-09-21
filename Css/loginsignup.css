@@ -9,7 +9,7 @@
 
 }
 .book-img {
-    border: 2px solid green;
+   
     width: 55%;
     height: 70%;
     border-radius: 100%;
@@ -35,7 +35,7 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     margin-top: 10%;
     width: 25%;
-    height: 60%;
+    height: 65%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,6 +104,14 @@ a:hover{
     background-color: blue;
     color: white;
     border: transparent;
+}
+.text-error{
+    font-style: italic;
+    color: red;
+    display: flex;
+    font-size: 10px;
+    flex-direction: column;
+    margin-left: 10px;
 }
 @media screen and (max-width:1024px) and (min-width:900px) {
    
