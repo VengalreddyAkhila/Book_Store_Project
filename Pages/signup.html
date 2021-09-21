@@ -9,7 +9,7 @@
     <title>Book Store</title>
 </head>
 <body>
-    <form class="form" id="form">
+    <div class="form" id="form">
         <div class="form-container">
         <img class="book-img" src="../Assests/bookshop.png" alt="">
         <h1 class="text">ONLINE BOOK SHOPPING </h1>
@@ -36,14 +36,14 @@
                 <label for="mobilenumber">Mobile Number</label>
                 <input type="mobilenumber" id="mobilenumber" name="mobilenumber">
                 <error-output class="text-error" id="number_error" for="text"></error-output>
-                <button class="signup-btn">SignUp</button>
+                <button class="signup-btn" onclick="signup()">SignUp</button>
             </div>
             
         </div>
-    </form>
+    </div>
 
-    <script   src="../js/signuppage.js"></script>
-    <script   src="../js/login.js"></script>
+    <script   src="../js/signuppage.js"></script>    
+    <script   src="../service/http_service.js"></script>
 
     </body>
     </html>

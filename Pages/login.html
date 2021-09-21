@@ -9,7 +9,7 @@
     <title>Book Store</title>
 </head>
 <body>
-    <form class="form">
+    <div class="form">
         <div class="form-container">
         <img class="book-img" src="../Assests/bookshop.png" alt="">
         <h1 class="text">ONLINE BOOK SHOPPING </h1>
@@ -30,7 +30,7 @@
                 <error-output class="text-error" id="password_error" for="text"></error-output>
 
                 <a class="forget-mail" href="#">Forgot Password?</a>
-                <button class="login-btn">Login</button>
+                <button class="login-btn" onclick="login()">Login</button>
                 <div class="or" >OR</div>
                 <div class="btns">
                 <button class="facebook-btn" style="background-color: blue; color: white;border: none;">Facebook</button>
@@ -40,10 +40,11 @@
             </div>
             
         </div>
-    </form>
+    </div>
 
   <script   src="../js/login.js"></script>
-  <script   src="../js/signuppage.js"></script>
+  <script   src="../service/http_service.js"></script>
+
 
 
 

@@ -4,16 +4,16 @@ window.addEventListener('DOMContentLoaded',(event) => {
     const nameError = document.getElementById("fullname_error");
     const form = document.getElementById("form");
     let nameRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{3,}$');
-    form.addEventListener("submit", (e) => {
-        let messages = []
-        if(name.value === '' || name.value == null){
-            messages.push('fullname is required');
-        }
-        if(messages.length > 0){
-            e.preventDefault()
-            nameError.innerText = messages.join(',');
-        }
-    });
+    // form.addEventListener("submit", (e) => {
+    //     let messages = []
+    //     if(name.value === '' || name.value == null){
+    //         messages.push('fullname is required');
+    //     }
+    //     if(messages.length > 0){
+    //         e.preventDefault()
+    //         nameError.innerText = messages.join(',');
+    //     }
+    // });
         name.addEventListener("input", function () {
         if (nameRegex.test(name.value)) {
             nameError.textContent = "";    
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
        var email = document.getElementById("email");
        var emailError = document.getElementById("email_error");
        const form2 = document.getElementById("form");
-       let emailRegex = RegExp("^[A-Za-z0-9]{3,10}@[A-Za-z]{3,10}.(com|co.in|co.uk)$");
+       let emailRegex = RegExp("^[A-Za-z0-9]+[.+-]{0,1}[0-9a-zA-Z]+@[A-Za-z]+[.][A-Za-z]{2,3}(.[a-zA-Z]{2,3}){0,1}$");
        form2.addEventListener("submit", (e) => {
            let messages = []
            if(email.value === '' || email.value == null){
@@ -99,3 +99,23 @@ window.addEventListener('DOMContentLoaded',(event) => {
         }
     }); 
 });
+const Baseurl =  "https://new-bookstore-backend.herokuapp.com/";
+    function signup () {
+   
+       
+         let data={
+             "fullName" : fullname.value,             
+             "email" : email.value,       
+             "password" : password.value,
+             "phone" : mobilenumber.value
+         }   
+         console.log("data",data);
+         makePromiseCall("POST",`${Baseurl}bookstore_user/registration`,true,data)
+         .then((res) => {
+             console.log(res);
+             window.location.href="../Pages/login.html"; 
+             
+         })
+         .catch()
+         console.log("error");
+     }
