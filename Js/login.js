@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
          .then((res) => {
              
             console.log(JSON.parse(res));
-            //window.location.href="../Pages/signup.html"; 
+            window.location.href="../Pages/homepage.html"; 
              localStorage.setItem("Accesstoken",JSON.parse(res).result.accessToken);
              
          })

@@ -1,0 +1,39 @@
+.labels{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 50%;
+    border: 1px solid gainsboro;
+    margin-left: 30%;
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  
+ }
+ label{
+     margin-right: 180px;
+ }
+ input{
+     width: 250px;
+     height: 35px;
+     padding-top: 5px;
+     margin-bottom: 10px;
+ }
+ .reset-btn{
+     height: 30px;
+     margin-top: 15px;
+     background-color: darkred;
+     color: white;
+     border: none;
+     width: 50%;
+ }
+ .create-account{
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border: 1px solid gainsboro;
+     margin-top: 15%;
+     background-color: gainsboro;
+ }

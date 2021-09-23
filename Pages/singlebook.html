@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="../css/singlebook.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script   src="../js/singlebook.js"></script>
+    <script   src="../service/http_service.js"></script>
 
     <title>Book Store</title>
 </head>
@@ -30,7 +31,7 @@
             <div class="book-text">
             <h1 class="main-text">Don't Make Me Think</h1>
             <h class="sub-text">by steve king</h>
-            <button class="rating">4.5</button>
+            <div class="rating">4.5 *</div>
             <div class="cost">RS.1500</div>
         </div>
         </div>
@@ -39,42 +40,13 @@
         <button class="Whishlist">WHISHLIST</button>
         </div>
         </div>
-    </div> -->
-   <div class="main-list" id="main-list"></div> 
-<!-- 
-   <div class="overlay" id="overlay" style="display:none;">
-    <div class="popup" id="popup" style="display:none;">
-   <div class="item-list" id="item-list" >
-       </div>
-   </div> -->
- 
-   <div class="pagination">
-    <a class="active" id="forward" href="#">&laquo;</a>
-    <a class="active" href="#">1</a>
-    <a class="active" href="#">2</a>
-    <a class="active" href="#">3</a>
-    <a class="active" href="#">4</a>
-    <a class="active" href="#">5</a>
-    <a class="active" href="#">6</a>
-    <a class="active" href="#">7</a>
-    <a class="active" href="#">8</a>
-    <a class="active" href="#">9</a>
-    <a class="active" href="#">10</a>
-    <a class="active" id="backward" href="#">&raquo;</a>
-  </div>
-  <div class="footer">
-      <h1>Copyrigth @ 2020, Bookstore Private Limited All Rights Reserved. </h1>
-  </div>
-  
- 
-   <!-- <div class="item-list" id="list" >
-       </div>  -->
+    </div>
+  -->
    
-    <script   src="../js/getbooks.js"></script>
-    <script   src="../service/http_service.js"></script>
-    <script   src="../js/singlebook.js"></script>
-
-
+  <div class="item-list" id="list" ></div>
+ 
+  <!-- <script   src="../js/singlebook.js"></script> -->
+ 
 </body>
 
 </html>
