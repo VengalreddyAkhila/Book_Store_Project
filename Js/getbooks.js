@@ -22,7 +22,7 @@ function GetBooks() {
           
           <div class="main-section">
           <div class="sub-section" id="sub-section" >
-              <div class="sec" id="`+ BooksList[i] + `">
+              <div class="sec" id="`+ BooksList[i].bookName +`">
           <div class="books">
               <img class="img" src = "`+ path + images[i] + `" alt="" >
               </div>
@@ -47,7 +47,7 @@ function GetBooks() {
 
 $(document).on('click','.sec', (event) =>{
   console.log(event.currentTarget.id)
-   let str = `../Pages/singlebook.html?bookName&author&price=${event.currentTarget.id}`
+   let str = `../Pages/singlebook.html?bookName=${event.currentTarget.id}`
    window.location.href= str;
 })
 // function openbook(bookName){

@@ -54,12 +54,12 @@ input {
   }
   .sub-section1{
      border: 1px solid gainsboro;
-      width: 200px;
-      height: 70%;
+      width: 300px;
+      height: 80%;
       display: flex;
       flex-direction: column;
       margin-left: 100%;
-      margin-top: 5%;
+      margin-top: 10%;
       margin-right: 10%;
   }
   .sec1{
@@ -79,40 +79,50 @@ input {
   .img1{
       margin-left: 30px;
       margin-top: 18px;
-      width: 150px;
-      height: 180px;
+      width: 250px;
+      height: 280px;
   }
   .rating1{
       border: black;
-      width: 25%;
+      width: 45%;
       height: 30px;
       background-color: green;
       color: white;
-      margin-top: 2%;
+      margin-top: 10%;
       margin-bottom: 2%;
+      margin-left: 2%;
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: center;
   }
   .cost1{
-    margin-top: 2%;
+    margin-top: 10%;
     margin-bottom: 5%;
     font-weight: 20px;
   }
   .main-text1{
-      font-size: 15px;
+      font-size: 25px;
+  }
+  .sub-text1{
+      font-size: 20px;
   }
   
   .book-text1{
       display: flex;
       flex-direction: column;
-      margin-left: 30px;
-      
+      margin-left: 150px;    
      
+  }
+  .description{
+      margin-top: 10%;
+      font-size: 20px;
   }
   .button{
       display: flex;
       flex-direction: row;
+      margin-top: 25%;
+     
      
   }
 .Addtobag{
@@ -120,14 +130,15 @@ input {
     background-color: darkred;
     color: white;
     border: none;
-    width: 100px;
+    width: 150px;
 }
 .Whishlist{
     height: 35px;
     background-color: black;
     color: white;
     border: none;
-    width: 100px;
+    width: 150px;
+    margin-left: 15%;
 }
 .item-list {
     display: flex;
