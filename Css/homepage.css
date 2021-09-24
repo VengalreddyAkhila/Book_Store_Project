@@ -170,35 +170,7 @@ input {
             display: flex;
             align-items: center;
         }
-        /* .overlay {
-            background:rgba(0,0,0,0.8);
-            opacity:1;
-            filter:alpha(opacity=80);
-            position:fixed;
-            top:0px;
-            bottom:0px;
-            left:0px;
-            right:0px;
-            z-index:100;
-            width: 120%;
-            
-            margin-top: 8%;
-            }
-            
-            .popup{
-            background:white;
-            position:absolute;
-            top:0;
-            left:0;
-            bottom:0;
-            right:0;
-            z-index:200;
-            width:600px;
-            height:400px;
-            margin:auto;
-            border-radius: 10px;
-            }  
-         */
+     
 
             
     @media screen and (max-width:1024px) {
@@ -232,7 +204,12 @@ input {
         input{
             margin-right: 6%;
         } 
-       
+        .pagination{
+            margin-left: 20%;
+        }
+        .footer{
+            width: 100%;
+        }
        
     }
     @media screen and (max-width:600px) {
@@ -260,6 +237,12 @@ input {
         }
         input{
             margin-right: 18%;
+        }
+        .pagination{
+            margin-left: 20%;
+        }
+        .footer{
+            width: 100%;
         }
     }
     @media screen and (max-width:400px) {

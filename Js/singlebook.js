@@ -45,7 +45,7 @@ let path1 = "../Assests/";
              <img class="img1" src = "../Assests/book11.png" alt="" >
              </div>
              <div class="book-text1" style="width:1000px">
-             <h1 class="main-text1">`+ singlebook.bookName +`</h1>
+             <h1 class="main-text1">`+ params.bookName +`</h1>
              <h class="sub-text1">`+ singlebook.author +`</h>
              <div class="rating1">4.5 * </div>
              <div class="cost1">RS.` + singlebook.price + `<hr></div>
@@ -68,3 +68,9 @@ let path1 = "../Assests/";
     console.log(err);
   })
 });
+
+$(document).on('click','.Addtobag', (event) =>{
+  console.log(event.currentTarget.id)
+   let str = `../Pages/customerdetails.html?bookName=${event.currentTarget.id}`
+   window.location.href= str;
+})
