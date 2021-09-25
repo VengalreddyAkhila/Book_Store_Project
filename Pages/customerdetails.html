@@ -23,7 +23,7 @@
         <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">
         <img class="cart" src="../Assests/cart.png" alt="">
     </div>
-    <div class="cart-img">
+    <div class="cart-img" id="cartpage">
         <div class="section">
            
             <div class="sub-section">
@@ -41,13 +41,15 @@
                     </div>
                 </div>
                 <div class="placeorder">
-                    <button class="placeorder-btn">PLACE ORDER</button>
+                    <button class="placeorder-btn" onclick="placeorder()">PLACE ORDER</button>
                 </div>
             </div>
         </div>
-
+        <!-- <div class="section2" id="customerdetails">
+            <h2>Customer Details</h2>
+            </div> -->
     </div>
-    <form class="row g-3" style="border: 1px solid gainsboro;width: 80%;height: 80%;margin-left: 10%;margin-top: 2%;" >
+    <form class="row g-3" id="customer-form" style="border: 1px solid gainsboro;width: 80%;height: 80%;margin-left: 10%;margin-top: 2%;" >
         <button class="btn btn-primary" id="toggle" type="button" data-toggle="collapse"
         data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="border: none;background-color:white;color: black;">
         Customer Details

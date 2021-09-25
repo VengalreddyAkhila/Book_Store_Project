@@ -33,6 +33,7 @@ let path1 = "../Assests/";
      
    );
    console.log(singlebook)
+   //console.log(book)
 
     let tempHTML = '';
 

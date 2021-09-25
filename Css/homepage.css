@@ -161,7 +161,6 @@ input {
         }
         .footer{
           
-            margin-top: 10%;
             color: white;
             background-color: black;
             font-size: 5px;
@@ -169,6 +168,7 @@ input {
             padding-left: 50px;
             display: flex;
             align-items: center;
+           margin-top: 10%;
         }
      
 

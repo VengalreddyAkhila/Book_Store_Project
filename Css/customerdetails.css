@@ -173,6 +173,25 @@ body {
     margin-top: 12%;
     border-radius: 5px;
 }
+.section2 {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #e4e2e2;
+    border-radius: 1px;
+    margin-left: 160px;
+    margin-top: 20px;
+    width: 60%;
+    padding-left: 40px;
+}
+
+.section2 h2 {
+    font: normal normal normal Lato;
+    letter-spacing: 0px;
+    color: #333232;
+    opacity: 1;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
 .ordersummary{
     border: 1px solid gainsboro;
     height: 40%;
