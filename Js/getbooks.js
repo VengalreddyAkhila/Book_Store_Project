@@ -22,7 +22,7 @@ function GetBooks() {
           
           <div class="main-section">
           <div class="sub-section" id="sub-section" >
-              <div class="sec" id="`+ BooksList[i].bookName +`">
+              <div class="sec" id="`+ BooksList[i].bookName + `">
           <div class="books">
               <img class="img" src = "`+ path + images[i] + `" alt="" >
               </div>

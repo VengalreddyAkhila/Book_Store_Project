@@ -4,7 +4,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
   
 let images1 = ["book1.png", "book2.png", "book3.png", "book4.png", "book5.png", "book12.png", "book1.png", "book8.png", "book9.png", "book10.png", "book1.png", "book12.png", "book2.png", "book9.png", "book6.png", "book11.png"];
 let path1 = "../Assests/";
-
+console.log(path1)
+console.log(images1)
 
 
  //window.location.href="../Pages/singlebook.html";
@@ -26,13 +27,14 @@ let path1 = "../Assests/";
     const urlSearchParams = new URLSearchParams(window.location.search);
     const params = Object.fromEntries(urlSearchParams.entries());
     console.log(params)
-    
-    
+
+
    let singlebook = BooksList.find(
-     (book) => book.bookName 
-     
+     (book) => book.bookName  === params.bookName
    );
    console.log(singlebook)
+    
+   
    //console.log(book)
 
     let tempHTML = '';
@@ -43,10 +45,10 @@ let path1 = "../Assests/";
          <div class="sub-section1">
              <div class="sec1">
          <div class="books1">
-             <img class="img1" src = "../Assests/book11.png" alt="" >
+             <img class="img1" src = "../Assests/book10.png " alt="" >
              </div>
              <div class="book-text1" style="width:1000px">
-             <h1 class="main-text1">`+ params.bookName +`</h1>
+             <h1 class="main-text1">`+ singlebook.bookName +`</h1>
              <h class="sub-text1">`+ singlebook.author +`</h>
              <div class="rating1">4.5 * </div>
              <div class="cost1">RS.` + singlebook.price + `<hr></div>
@@ -54,12 +56,12 @@ let path1 = "../Assests/";
          </div>
          </div>
     <div class="button">
-    <button class="Addtobag">ADD TO BAG</button>
+    <button class="Addtobag"  onclick="addbooktobag()">ADD TO BAG</button>
     <button class="Whishlist">WHISHLIST</button>
     </div>
     </div>
   </div>`;
-    
+   
    document.getElementById("list").innerHTML = tempHTML;
     console.log(document.getElementById("list"))
     
@@ -70,8 +72,10 @@ let path1 = "../Assests/";
   })
 });
 
-$(document).on('click','.Addtobag', (event) =>{
-  console.log(event.currentTarget.id)
-   let str = `../Pages/customerdetails.html?bookName=${event.currentTarget.id}`
-   window.location.href= str;
-})
+function addbooktobag(){
+  Books = BooksList
+  console.log(Books)
+  let data = {
+     "product_id": Books._id
+  }
+}

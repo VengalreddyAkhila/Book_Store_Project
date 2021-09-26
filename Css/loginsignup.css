@@ -6,24 +6,24 @@
     display: flex;
     flex-direction: row;
     background-color: grey;
+    align-items: center;
+    justify-content: center;
 
 }
 .book-img {
    
-    width: 55%;
-    height: 70%;
+    width: 55%;    
     border-radius: 100%;
-    margin-left: 10%;
-    margin-top: 10%;
+    
 }
 .text{
     margin-left:12%;
 }
 .form-container{
    
-    margin-top: 16%;
+ 
     width: 40%;
-    height: 50%;
+    max-height: 60%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -33,14 +33,14 @@
 }
 .loginsignup{
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    margin-top: 10%;
+    max-height: 60%;
     width: 25%;
-    height: 65%;
+   padding: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    margin-left: 22%;
+    position: relative;
+   left: -10%;
     background-color: white;
     border-radius: 10px;
 }
@@ -118,14 +118,14 @@ a:hover{
     .form-container{
     
         width: 50%;
-        height: 25%;
+      
     }
     .loginsignup{
         
-        height: 30%;
+       
         width: 30%;
-        margin-left: 28%;
     }
+       
 }
 @media screen and (max-width:900px) and (min-width:801px){
     .form{
@@ -135,15 +135,13 @@ a:hover{
     .form-container{
      
         width: 50%;
-        height: 30%;
-       margin-top: 60%;
+   
     }
     .loginsignup{
       
-        height: 40%;
+       
         width: 40%;
-        margin-left: 32%;
-        margin-top: 50%;
+       
     }
 }
 @media screen and (max-width:800px) and (min-width:601px){
@@ -154,14 +152,14 @@ a:hover{
     .form-container{
   
         width: 50%;
-        height: 30%;
+       
        
     }
     .loginsignup{
    
-        height: 40%;
+       
         width: 40%;
-        margin-left: 32%;
+      
 
     }
 }
@@ -173,21 +171,18 @@ a:hover{
     .form-container{
       
         width: 50%;
-        height: 30%;
-        margin-top: 50%;
+      
+       
     }
     .loginsignup{
       
-        height: 40%;
+       
         width: 35%;
-        margin-left: 32%;
-        margin-top: 35%;
+        
     }
     input{
         width: 100px;
-        height: 15px;
-        padding-top: 5px;
-        margin-bottom: 10px;
+      
      
     }
     label{
