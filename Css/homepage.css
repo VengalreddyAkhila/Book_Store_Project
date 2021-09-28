@@ -110,20 +110,23 @@ body {
     display: flex;
     flex-direction: column;
     color: white;
-    margin-right: 20%;
+    
     
 }
 .cart-count {
-    bottom: 10px;
+    bottom: 12px;
     float: right;
     position: relative;
-    width: 1%;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     border-radius: 25px;    
     background-color: white;
     color: #A03037;
-    right: 21%;
+    right: 19%;
     font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .dashboard-book {
     text-align: left;
@@ -151,7 +154,7 @@ input {
     height: 60%;
     width: 40%;
     padding: 6px 10px;
-    margin-right: 10%;
+    margin-right: -10%;
   }
   ::placeholder {
     color: black;

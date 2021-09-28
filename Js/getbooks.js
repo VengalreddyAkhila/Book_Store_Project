@@ -23,7 +23,7 @@ function GetBooks() {
       // console.log(pages);
 
       for (var i = 0; i < BooksList.length; i++) {
-        console.log(BooksList[i])
+ 
         
         nHTML += `
           

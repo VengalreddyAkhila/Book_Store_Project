@@ -25,3 +25,25 @@ function getService(urlPostfix, headerconfig) {
     })
   
   }
+  function putService(urlPostfix, data, headerconfig) {   
+
+    console.log(urlPostfix, data, headerconfig);
+    return new Promise (function(resolve, reject) {
+      var resolved = axios.put(baseurl+urlPostfix, data, headerconfig);
+      resolve(resolved);
+    })
+  
+  }
+  
+ 
+  
+  function deleteService(urlPostfix, data, headerconfig) {   
+  
+    console.log(urlPostfix, data, headerconfig);
+    return new Promise (function(resolve, reject) {
+      data.headers = headerconfig.headers
+      var resolved = axios.delete(baseurl+urlPostfix, data, headerconfig);
+      resolve(resolved);
+    })
+  
+  }

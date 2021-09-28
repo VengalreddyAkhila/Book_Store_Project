@@ -83,7 +83,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       console.log(err);
     })
 });
-const Baseurl01 = "https://new-bookstore-backend.herokuapp.com/";
+
 function cartpage() {
   window.location.replace('../Pages/cart.html');
 }
@@ -148,3 +148,8 @@ $(document).on('click', '.Addtobag', (event) => {
     })
 
 })
+
+
+function continueshopping() {
+  window.location.replace('../Pages/homepage.html');
+}

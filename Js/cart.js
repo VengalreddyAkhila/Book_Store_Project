@@ -4,17 +4,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
     getCartItemsInOrderSection();
 });
 
-
-
-const Baseurl0 = "https://new-bookstore-backend.herokuapp.com/";
 let cartItems = []
 function getCartItems() {
-    makePromiseCall("GET", `${Baseurl0}bookstore_user/get_cart_items`, true, {}, true)
-    .then(res => {
-      console.log(JSON.parse(res).result);
-      console.log(JSON.parse(res).result.length);
+
+getService("​/bookstore_user/get_cart_items", headerconfig)
+.then(res=> {
+    console.log(res.data.result);
+    console.log(res.data.result.length);
         let cartItemsHTML=``;
-        cartItems = JSON.parse(res).result;
+        cartItems = res.data.result;
         let itemCountHTML=``;
         itemCountHTML += `<span class="cart-item-count">` +cartItems.length +` )</span>`
         for(let i=0; i<cartItems.length; i++) {
@@ -31,9 +29,9 @@ function getCartItems() {
                                     ` +
                                     `</div>`+ 
                                 `</div>`+
-                                
+
                                 `<div class="subsection3">`+
-                        
+
                                     `<span class="minus-count" id=`+ i  +` onclick="decreaseCartItem(id)">-</span>`+
                                     `<span class="quantity-section">`+
                                         `<span class="count">`+cartItems[i].quantityToBuy+`</span>`+
@@ -43,8 +41,8 @@ function getCartItems() {
                                     `</span>`+
                                     `<span class="remove-section" id=`+ i  +` onclick="removeBookFromCart(id)">Remove</span> `   +
                                 ` </div> `+
-                       
-                                                   
+
+
                             `</div>`
         }
         document.getElementById("place-order-section-cart-description").innerHTML = cartItemsHTML;        
@@ -70,25 +68,42 @@ function addCustomerDetails() {
         "city": city.value,
         "state": state.value
     };  
-   
-    makePromiseCall("PUT", `${Baseurl0}bookstore_user/edit_user`, true, data, true)
-        .then(res => {
-            console.log(JSON.parse(res).data.result);
-            
-            
+
+    putService("/bookstore_user/edit_user",data, headerconfig)
+    .then(res=> {
+        console.log(res.data.result);
         })
         .catch((err) => {
             console.log(err);
         })
 
 }
+function addOrder() {
+    let itemsList = [];
+    for(let i=0; i<cartItems.length; i++) {
+        tempDict = {
+            'product_id': cartItems[i].product_id._id,
+            'product_name': cartItems[i].product_id.bookName,
+            'product_quantity': cartItems[i].quantityToBuy,
+            'product_price': cartItems[i].product_id.price,
+        }
+        itemsList.push(tempDict);
+    }    
+    let data = {
+        "orders": itemsList
+    }
 
+    postService("/bookstore_user/add/order", data, headerconfig)
+    .then(res=> {
+        console.log(res.data.result);
+        window.location.replace('../Pages/ordersucessful.html')
+    })
+}
 function getCartItemsInOrderSection() {
-    makePromiseCall("GET", `${Baseurl0}bookstore_user/get_cart_items`, true, {}, true)
-    .then(res => {
-      console.log(JSON.parse(res).result);
-      console.log(JSON.parse(res).result.length);
-      cartItems = JSON.parse(res).result;
+    getService("​/bookstore_user/get_cart_items", headerconfig)
+    .then(res=> {
+        console.log(res.data.result);
+      cartItems = res.data.result;
       let cartItemsHTML=``;
         for(let i=0; i<cartItems.length; i++) {
             console.log(cartItems[0]._id);
@@ -115,10 +130,37 @@ function removeBookFromCart(i) {
     let data = {
         "cartItem_id": BooksRemove._id
     }
-    
-    makePromiseCall("DELETE", `${Baseurl0}​/bookstore_user​/remove_wishlist_item​/${BooksRemove._id}`, true,data, true)
+
+    deleteService("/bookstore_user/remove_cart_item/"+ BooksRemove._id+"", data, headerconfig)
     .then(res=> {
-        getCartItems();  
+              getCartItems();
+    })
+}
+
+function increaseCartItems(i) {
+    let IncreaseCount = cartItems[i];
+
+    let data = {
+        "quantityToBuy": IncreaseCount.quantityToBuy + 1
+    }
+    
+    putService("/bookstore_user/cart_item_quantity/"+IncreaseCount._id +"", data, headerconfig)
+    .then(res=> {
+        console.log(res);
+        getCartItems();
+    })
+}
+
+
+function decreaseCartItems(i) {
+    let DecreaseCount = cartItems[i];  
+    let data = {
+        "quantityToBuy": DecreaseCount.quantityToBuy - 1
+    }
+    
+    putService("/bookstore_user/cart_item_quantity/"+DecreaseCount._id +"", data, headerconfig)
+    .then(res=> {       
+        getCartItems();
     })
 }
 // name validation    
@@ -202,4 +244,3 @@ function orderSummery() {
         }
     }
 } 
-

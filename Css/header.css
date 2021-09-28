@@ -9,12 +9,13 @@
 .form-control {
     height: 70%;
     display: flex;
+    width: 150%;
 }
 
 .nav-icon1 img{
-    padding-top: 17px;
+    padding-top: 12px;
     padding-left: 140px;
-    height: 65%;
+   
 }
 
 .nav-icon2 {
@@ -24,7 +25,7 @@
     color: #FFFFFF;
     text-transform: capitalize;
     opacity: 1;
-    padding-left: 10px;
+    padding-left: 20px;
     padding-top: 11px;
     cursor: pointer;
 }
@@ -40,13 +41,13 @@
 .search {
     padding-top: 10px;
     padding-left: 45px;
-    width: 300px;    
+    width: 500px;    
 }
 
 .fa-user-o {
     color: white !important;
     padding-top: 16px;
-    padding-left: 150px;
+    padding-left: 350px;
     cursor: pointer;
 } 
 
