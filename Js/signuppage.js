@@ -101,7 +101,10 @@ window.addEventListener('DOMContentLoaded',(event) => {
 });
 const Baseurl =  "https://new-bookstore-backend.herokuapp.com/";
     function signup () {
-   
+        const headerconfig = {   
+            'Content-Type': 'application/json',
+            
+          };
        
          let data={
              "fullName" : fullname.value,             
@@ -110,10 +113,11 @@ const Baseurl =  "https://new-bookstore-backend.herokuapp.com/";
              "phone" : mobilenumber.value
          }   
          console.log("data",data);
-         makePromiseCall("POST",`${Baseurl}bookstore_user/registration`,true,data)
-         .then((res) => {
-             console.log(res);
-             window.location.href="../Pages/login.html"; 
+         postService("/bookstore_user/registration", data, headerconfig)
+         .then(res=> {
+             console.log(res);   
+           
+             //window.location.href="../Pages/login.html"; 
              
          })
          .catch()

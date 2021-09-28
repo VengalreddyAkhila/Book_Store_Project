@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/singlebook.css">
+    <link rel="stylesheet" href="../css/homepage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script   src="../js/singlebook.js"></script>
-    <script   src="../service/http_service.js"></script>
+    <script   src="../service/axiox.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    
 
     <title>Book Store</title>
 </head>
@@ -18,8 +23,17 @@
             <img class="bookimg" src="../Assests/bookimg.png" alt="">
             <h1 class="bookstore">Bookstore</h1>
         </div>
-        <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">        
-        <img class="cart"  src="../Assests/cart.png" alt="">
+        <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content"> 
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <span><i class="fa fa-user-o" aria-hidden="true"></i>
+              <li style="list-style-type:none" class="user" id="username-in-header"></li>
+            </span>
+          </button>       
+        <span class="cart-section"   >
+            <img class="cart"  src="../Assests/cart.png" alt="" onclick="cartpage()">
+            <li style="list-style-type:none" >cart</li>
+              </span>
+              <span class="cart-count" id="cart-count"></span>
     </div>
     
     <!-- <div class="main-section">

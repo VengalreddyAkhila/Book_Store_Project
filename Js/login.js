@@ -60,12 +60,13 @@ window.addEventListener('DOMContentLoaded',(event) => {
              "password" :password.value             
          }     
          console.log("data",data);
-         makePromiseCall("POST",`${Baseurl1}bookstore_user/login`,true,data)
-         .then((res) => {
-             
-            console.log(JSON.parse(res));
-            window.location.href="../Pages/homepage.html"; 
-             localStorage.setItem("Accesstoken",JSON.parse(res).result.accessToken);
+         postService("/bookstore_user/login", data, headerconfig)
+         .then(res=> {
+             console.log(res.data);                    
+                 localStorage.setItem("token", res.data.result.accessToken);
+          //  window.location.href="../Pages/homepage.html"; 
+            // localStorage.setItem("Accesstoken",JSON.parse(res).result.accessToken);
+             //localStorage.getItem("x-access-token",JSON.parse(res).result.accessToken);
              
          })
          .catch()

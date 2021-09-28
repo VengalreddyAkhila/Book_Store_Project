@@ -17,8 +17,16 @@
             <img class="bookimg" src="../Assests/bookimg.png" alt="">
             <h1 class="bookstore">Bookstore</h1>
         </div>
-        <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">        
+
+        <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">   
+        <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <span><i class="fa fa-user-o" aria-hidden="true"></i>
+              <li style="list-style-type:none" class="user" id="username-in-header"></li>
+            </span>
+          </button> -->
+     
         <img class="cart"  src="../Assests/cart.png" alt="">
+    
     </div>
     
     <!-- <div class="main-section">
@@ -40,7 +48,14 @@
         </div>
         </div>
     </div> -->
-   <div class="main-list" id="main-list"></div> 
+    <div class="bookscount">
+    <div class="book-count-section">
+        <span>Books</span>
+        <span class="dashboard-book" id="homepage-book-count"></span>
+      </div>
+  
+    <div class="main-list" id="main-list"></div> 
+    </div>
 <!-- 
    <div class="overlay" id="overlay" style="display:none;">
     <div class="popup" id="popup" style="display:none;">
@@ -71,8 +86,10 @@
        </div>  -->
    
     <script   src="../js/getbooks.js"></script>
-    <script   src="../service/http_service.js"></script>
+    <script   src="../service/axiox.js"></script>
     <script   src="../js/singlebook.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
 </body>

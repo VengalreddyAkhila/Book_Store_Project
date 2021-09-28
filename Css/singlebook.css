@@ -121,8 +121,7 @@ input {
   .button{
       display: flex;
       flex-direction: row;
-      margin-top: 25%;
-     
+      margin-top: 25%;   
      
   }
 .Addtobag{
@@ -140,6 +139,34 @@ input {
     width: 150px;
     margin-left: 15%;
 }
+.add-cart{
+    display: none;
+    padding-bottom: 10px;
+    width: 50%;
+}
+.cart-button{
+    width: 100%;
+    height: 30px;
+    background-color: blue;
+    border: none;
+}
+.wishlist-button{
+    width: 100%;
+    height: 30px;
+    background-color: blue;
+    border: none;
+}
+.add-wishlist{
+    display: none;
+    padding-bottom: 10px;
+    width: 50%;
+}
+.select-buttons{
+   
+    display: flex;
+    flex-direction: row;
+}
+
 .item-list {
     display: flex;
     flex-direction: row;

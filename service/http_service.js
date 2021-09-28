@@ -1,5 +1,5 @@
 function makePromiseCall(methodtype, url, async = true, data , header){
-  console.log(url);
+  //console.log(url);
   return new Promise(function(resolve,reject){
     let xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
@@ -12,18 +12,19 @@ function makePromiseCall(methodtype, url, async = true, data , header){
           status: xhttp.status,
           statusText: xhttp.statusText
         });
-        console.log("xhttp failed");
+        //console.log("xhttp failed");
       }
     };
     xhttp.open(methodtype,url, async);
     if (data) {
-      console.log(JSON.stringify(data));
+      //console.log(JSON.stringify(data));
+      //console.log(data)
       xhttp.setRequestHeader("Content-Type", "application/json");
       if(header){
-        xhttp.setRequestHeader("Authorization",localStorage.getItem("token"));
+        xhttp.setRequestHeader("x-access-token",localStorage.getItem("token"));
       }
       xhttp.send(JSON.stringify(data));
   } else xhttp.send();
- console.log(methodtype + " request sent to the server");
+ //console.log(methodtype + " request sent to the server");
   });
 }
