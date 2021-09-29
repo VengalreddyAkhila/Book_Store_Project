@@ -13,9 +13,9 @@ document.getElementById("header-content").innerHTML = `
      
    <div class="dropdown-content">
      <a href="#">My Profile</a>
-     <a href="#">My Orders</a>
+     <a href="../Pages/orderspage.html">My Orders</a>
      <a href="../Pages/whishlist.html">My Whishlist</a>
-     <a href="">Logout</a>
+     <a href="../Pages/login.html">Logout</a>
    </div>
  </div>   
  

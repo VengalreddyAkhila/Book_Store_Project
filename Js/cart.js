@@ -3,7 +3,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     getCartItems();
     getCartItemsInOrderSection();
 });
-
+let imageList1 =["book1.png", "book2.png", "book3.png", "book4.png", "book5.png", "book12.png", "book1.png", "book8.png", "book9.png", "book10.png", "book1.png", "book12.png", "book2.png", "book9.png", "book6.png", "book11.png"];
+let path1 = "../Assests/";
 let cartItems = []
 function getCartItems() {
 
@@ -20,7 +21,7 @@ getService("​/bookstore_user/get_cart_items", headerconfig)
             cartItemsHTML +=    `<div class="cart-item-section">`+
                                 `<div class="image-and-description">`+
                                     `<div class="cart-image-item">`+
-                                        `<img src="../Assests/book9.png">`+
+                                        `<img src="`+ path1 + imageList1[i] + `">`+
                                     `</div>` +  
                                     `<div class="cart-item-title">`+ cartItems[i].product_id.bookName +`
                                         <li style="list-style: none" class="title2">`+ cartItems[i].product_id.author +`</li>
@@ -72,6 +73,7 @@ function addCustomerDetails() {
     putService("/bookstore_user/edit_user",data, headerconfig)
     .then(res=> {
         console.log(res.data.result);
+        addOrder();
         })
         .catch((err) => {
             console.log(err);
@@ -106,11 +108,11 @@ function getCartItemsInOrderSection() {
       cartItems = res.data.result;
       let cartItemsHTML=``;
         for(let i=0; i<cartItems.length; i++) {
-            console.log(cartItems[0]._id);
+           
             cartItemsHTML +=    `<div class="order-summery-cart-item-section">`+
                                 `<div class="image-and-description">`+
                                     `<div class="cart-image-item">`+
-                                        `<img src="../Assests/book11.png">`+
+                                        `<img src="`+ path1 + imageList1[i] + `">`+
                                     `</div>` +  
                                     `<div class="cart-item-title">`+ cartItems[i].product_id.bookName +`
                                         <li style="list-style: none" class="title2">`+ cartItems[i].product_id.author +`</li>

@@ -1,7 +1,4 @@
-.html {
-    height: 100%;
-    width: 100%;
-}
+
   
 body {
     height: 100%;
@@ -23,15 +20,15 @@ body {
     
 }
 
-.header-section {
-    height: 90px;
-}
+
 
 .main-section {
     padding-bottom: 100px;
 }
 
-
+.header-sec{
+    width: 100%;
+}
 
 
 .order-placed-section-container {
