@@ -46,6 +46,7 @@ function GetBooks() {
       }
       document.getElementById("main-list").innerHTML = nHTML;
       console.log(i)
+      
     })
 
     .catch((err) => {

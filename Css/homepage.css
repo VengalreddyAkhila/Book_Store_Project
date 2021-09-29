@@ -3,131 +3,8 @@ body {
     height: 100%;
     margin: 0;
   }
-.header-section{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 64px;
-    align-items: center;
-   background-color: darkred;
-}
-.book-img{
-    display: flex;
-    flex-direction: row;    
-    color: white;
-}
-.bookimg{
-    height: 5%;
-    margin-top: 15%;
-    margin-left: 80%;
-}
-.bookstore{
-    margin-left: 15px;
-    font-size: 30px;
-}
 
-.dropdown-toggle {
-    border: none !important;
-    background-color: inherit !important;    
-}
 
-.dropdown-toggle:focus {
-    border: none !important;
-}
-
-.btn {
-    padding: 0px !important;
-}
-
-.btn:focus {
-    outline: none;
-    box-shadow: none;
-    border-color: inherit !important;
-  }
-
-.dropdown-toggle::after {
-    display: none;
-} 
-
-.dropdown-menu[data-bs-popper] {
-    left: 32%;
-    top: 50px;
-}
-
-.dropdown-item {
-    text-align: left;
-    font: normal normal normal 12px/16px Roboto;
-    letter-spacing: 0px;
-    color: #878787;
-    opacity: 1;
-    background: hsl(0, 0%, 100%) 0% 0% no-repeat padding-box;
-    opacity: 1;
-    padding-left: 25px;
-}
-
-.logout-button {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    opacity: 1;
-    font-family: Roboto;
-    border-color: #A03037;
-    color: #A03037;
-    width: 80%;
-}
-
-.profile-button {
-    padding-left: 6px;
-}
-
-.Hello-button, .user-name {
-    font: normal normal medium 12px/16px Roboto;
-    letter-spacing: 0px;
-    color: #0A0102;
-    opacity: 1;
-}
-
-.user {
-    padding-left: 200px;
-    font: normal normal normal 10px/13px Roboto;
-    letter-spacing: 0.45px;
-    color: #FFFFFF;
-    opacity: 1;
-}
-
-.cart-title-in-header {
-    font: normal normal normal 10px/13px Roboto;
-    letter-spacing: 0.45px;
-    color: #FFFFFF;
-    opacity: 1;
-}
-
-/* .cart{
-   margin-top: 45%;
-    width: 25px;
-    margin-left: 15%;
-} */
-.cart-section{
-
-    display: flex;
-    flex-direction: column;
-    color: white;
-    
-    
-}
-.cart-count {
-    bottom: 12px;
-    float: right;
-    position: relative;
-    width: 15px;
-    height: 15px;
-    border-radius: 25px;    
-    background-color: white;
-    color: #A03037;
-    right: 19%;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 .dashboard-book {
     text-align: left;
     font: normal normal normal 12px/16px Roboto;
@@ -148,18 +25,7 @@ body {
     margin-top: 5%;
 }
 
-input {
-    font: 16px system-ui;
-    color: #fff;
-    height: 60%;
-    width: 40%;
-    padding: 6px 10px;
-    margin-right: -10%;
-  }
-  ::placeholder {
-    color: black;
-    opacity: 0.7; 
-  }
+
   .main-section{
       width: 20%;
       height: 100%;
@@ -286,7 +152,7 @@ input {
             background-color: black;
             font-size: 5px;
             height: 50px;
-            padding-left: 50px;
+           
             display: flex;
             align-items: center;
            margin-top: 10%;
@@ -294,42 +160,21 @@ input {
      
 
             
-    @media screen and (max-width:1024px) {
-        /* .books{
+    @media screen and (max-width:1024px) and (min-width:900px){
+        
            
-            width: 160px;
-            height: 120px;
-            margin-left: 22px;
-        }
-        .img{
-            width: 100px;
-            height: 90px;
-            margin-left: 25px;
-            margin-top: 10px;
-        }
-        input{
-            margin-right: 20%;
-        } */
+       
         .main-section{
             width: 25%;
         }
-       input{
-           margin-left: 15%;
-       }
-       .cart-count{
-           width: 10%;
-           height: 15px;
-           bottom: 12px;
-       }
+     
        
     }
-    @media screen and (max-width:800px) {
+    @media screen and (max-width:800px) and (min-width:600px) {
         .main-section{
             width: 40%;
         }
-        input{
-            margin-right: 6%;
-        } 
+       
         .pagination{
             margin-left: 20%;
         }
@@ -338,13 +183,20 @@ input {
         }
        
     }
-    @media screen and (max-width:600px) {
+    @media screen and (max-width:600px) and (min-width:500px) {
         .main-section{
             width: 45%;
         }
-        .bookimg{
-            margin-left: 40%;
+       
+        .pagination{
+            margin-left: 20%;
         }
+        .footer{
+       
+            margin-top: 150px;
+        }
+      
+       
     }
     @media screen and (max-width:500px) {
         .main-section{
@@ -353,17 +205,7 @@ input {
         .main-list{
             margin-left: 40%;
         }
-        .bookimg{
-            margin-left: 10%;
-            width: 20px;
-            height: 20px;
-        }
-        .bookstore{
-            font-size: 20px;
-        }
-        input{
-            margin-right: 18%;
-        }
+      
         .pagination{
             margin-left: 20%;
         }
@@ -371,16 +213,4 @@ input {
             width: 100%;
         }
     }
-    @media screen and (max-width:400px) {
-        .bookimg{
-            margin-left: 10%;
-            width: 20px;
-            height: 20px;
-        }
-        .bookstore{
-            font-size: 20px;
-        }
-        input{
-            margin-right: 18%;
-        }
-    }
+ 

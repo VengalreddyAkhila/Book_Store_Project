@@ -3,101 +3,52 @@ body {
     height: 100%;
     margin: 0;
   }
-.header-section{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 64px;
-    align-items: center;
-   background-color: darkred;
-}
-.book-img{
-    display: flex;
-    flex-direction: row;    
-    color: white;
-}
-.bookimg{
-    height: 5%;
-    margin-top: 15%;
-    margin-left: 80%;
-}
-.bookstore{
-    margin-left: 15px;
-    font-size: 30px;
-}
-.cart{
-    margin-right: 10%;
-    width: 25px;
-    height: 25px;
-}
-input {
-    font: 16px system-ui;
-    color: #fff;
-    height: 60%;
-    width: 40%;
-    padding: 6px 10px;
-    margin-right: 10%;
-  }
-  ::placeholder {
-    color: black;
-    opacity: 0.7; 
-  }
+
+
   .main-section1{
-      width: 20%;
-      height: 100%;
-      display: flex;
-      flex-wrap: wrap;
-       border: 2px solid white;  
-      align-items: center;
-      justify-content: center;
-      
-  }
+      width: 80%;
+      height: 100%;     
+    
+      }
   .sub-section1{
-     border: 1px solid gainsboro;
-      width: 300px;
-      height: 80%;
-      display: flex;
-      flex-direction: column;
-      margin-left: 100%;
-      margin-top: 10%;
-      margin-right: 10%;
-  }
+     
+      width: 30%;
+      height: 60%;
+     }
   .sec1{
-   
-      width: 500px;
-      height: 50%;
+ 
+       width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: row;
   }
   .books1{
-  
-      width: 200px;
-      height: 180px;
+    border: 1px solid gainsboro; 
+      width: 35%;
+      height: 60%;
       background-color: white;
       
   }
   .img1{
-      margin-left: 30px;
-      margin-top: 18px;
-      width: 250px;
-      height: 280px;
+      padding-left: 25px;
+      padding-top: 5px;
+      width: 85%;
+      height: 80%;
   }
   .rating1{
       border: black;
-      width: 45%;
+      width: 18%;
       height: 30px;
       background-color: green;
-      color: white;
-      margin-top: 10%;
-      margin-bottom: 2%;
-      margin-left: 2%;
+      color: white;     
+      margin-top: 2%;     
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
   }
   .cost1{
-    margin-top: 10%;
+      margin-top: 2%;
     margin-bottom: 5%;
     font-weight: 20px;
   }
@@ -109,19 +60,19 @@ input {
   }
   
   .book-text1{
-      display: flex;
-      flex-direction: column;
-      margin-left: 150px;    
+      margin-left: 4%;
+            height: 60%;
+      width: 50%;
      
   }
   .description{
-      margin-top: 10%;
+    
       font-size: 20px;
   }
   .button{
       display: flex;
       flex-direction: row;
-      margin-top: 25%;   
+      margin-top: 18%;   
      
   }
 .Addtobag{
@@ -129,15 +80,15 @@ input {
     background-color: darkred;
     color: white;
     border: none;
-    width: 150px;
+    width: 50%;
 }
 .Whishlist{
     height: 35px;
     background-color: black;
     color: white;
     border: none;
-    width: 150px;
-    margin-left: 15%;
+    width: 50%;
+   
 }
 .add-cart{
     display: none;
@@ -167,12 +118,144 @@ input {
     flex-direction: row;
 }
 
-.item-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-top: 50px;
-    position: relative;
-    margin-left: 15%;
+.item-list {   
+  
+    height: 100%;
+    padding-left: 10%;
+      padding-top: 8%;  
 
+    }
+    .submit-btn{
+        border:none;
+        background-color: blue;
+        color:white;
+        height: 30px;
+        margin-left: 50%;
+        width:20%;
+        border-radius: 3px;
+    }
+    @media screen and (max-width:1024px) and (min-width:801px) {
+        input{
+            width: 30%;
+            margin-left: 10%;
+        }
+        .books1{
+        
+            width: 60%;
+            height: 32%;
+        }
+        .img1{
+            padding-top: 3%;
+        }
+        .submit-btn{
+            margin-left: 80%;
+        }
+    }
+    @media screen and (max-width:800px) and (min-width:601px) {
+        input{
+            width: 20%;
+            margin-left: 10%;
+        }
+        .bookstore{
+            font-size: 25px;
+        }
+        .bookimg{
+            margin-top: 12%;
+        }
+        .img1{
+            padding-left: 18px;
+        }
+        .books1{
+            
+            width: 60%;
+            height: 28%;
+        }
+        .main-text1{
+            font-size: 18px;
+        }
+        .sub-text1{
+            font-size: 15px;
+        }
+        .description{
+            font-size: 15px;
+        }
+        .book-text1{
+            
+            height: 38%;
+        }
+        .submit-btn{
+            margin-left: 60%;
+        }
+    }
+    @media screen  and (max-width:600px) {
+        .main-text1{
+            font-size: 18px;
+        }
+        .sub-text1{
+            font-size: 13px;
+        }
+        .description{
+            font-size: 15px;
+        }
+        .button{
+            margin-top: 24%;
+        }
+        .feedback h2{
+            font-size: 18px;
+        }
+        .sec1{
+           
+            flex-direction: column;
+           padding-left: 20%;
+            
+        }
+        .img1{
+            padding-top: 20px;
+        }
+        .books1{
+            width: 70%;
+            height: 45%;
+            padding-bottom: 15%;
+           
+        }
+        .rating1{
+            width: 30%;
+        }
+        .cost1{
+            margin-bottom: 0px;
+        }
+        .submit-btn{
+            border:none;
+            background-color: blue;
+            color:white;
+            height: 30px;
+            margin-left: 15%;
+            width:10%;
+            border-radius: 3px;
+        }
+    }
+    @media screen and (max-width:400px) {
+        .item-list{
+            display: flex;
+            flex-direction: column;
+        }
+        .sec1{
+            display: flex;
+        }
+        .rating1{
+            width: 30%;
+        }
+        .books1{
+            padding-bottom: 30%;
+        }
+        .button{
+            flex-direction: column;
+         
+        }
+        .Addtobag{
+            width: 100%;
+        }
+        .Whishlist{
+            width: 100%;
+        }
     }

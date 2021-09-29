@@ -111,7 +111,7 @@ body {
 .button-container {
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 600px;
+    padding-left: 500px;
 }
 
 .button-section {
@@ -127,7 +127,9 @@ body {
     text-transform: uppercase;
     opacity: 1;
     border: none;
+    border-radius: 5px;
 }
+
 
 /* section 2 styling */
 
@@ -310,6 +312,9 @@ label {
     border: 1px solid #DCDCDC;
     opacity: 1;
 }
+.home-button:hover,.other-button:hover,.work-button:hover{
+    background-color: blue;
+}
 
 .home-section {
     font: normal normal normal 12px/16px Roboto;
@@ -335,7 +340,7 @@ label {
 }
 
 .continue-button {
-    padding-left: 620px;
+    padding-left: 500px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -350,6 +355,8 @@ label {
     padding-bottom: 8px;
     padding-left: 13px;
     padding-right: 13px;
+    width: 60%;
+    border-radius: 5px;
 }
 
 .order-summery-section {

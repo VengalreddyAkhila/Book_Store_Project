@@ -32,24 +32,24 @@ getService("​/bookstore_user/get_cart_items", headerconfig)
 
                                 `<div class="subsection3">`+
 
-                                    `<span class="minus-count" id=`+ i  +` onclick="decreaseCartItem(id)">-</span>`+
+                                    `<span class="minus-count" id=`+ i  +` onclick="decreaseCartItems(id)">-</span>`+
                                     `<span class="quantity-section">`+
                                         `<span class="count">`+cartItems[i].quantityToBuy+`</span>`+
                                     `</span>`+    
                                     `<span class="add-count-section">`+
-                                        `<span class="add-count" id=`+ i  +` onclick="increaseCartItem(id)">+</span>`+
+                                        `<span class="add-count" id=`+ i  +` onclick="increaseCartItems(id)">+</span>`+
                                     `</span>`+
-                                    `<span class="remove-section" id=`+ i  +` onclick="removeBookFromCart(id)">Remove</span> `   +
+                                    `<span class="remove-section" id=`+ i  +` onclick="removeBook(id)">Remove</span> `   +
                                 ` </div> `+
 
 
                             `</div>`
         }
-        document.getElementById("place-order-section-cart-description").innerHTML = cartItemsHTML;        
-        document.getElementById("nav-section-cart-icon").innerHTML = itemCountHTML;
+        document.getElementById("place-order-section").innerHTML = cartItemsHTML;        
+        document.getElementById("cart-count").innerHTML = itemCountHTML;
         document.getElementById("place-order-section-cart-count").innerHTML = itemCountHTML;
-        document.getElementById("nav-section-cart-icon").innerHTML = itemCountHTML;
-        document.getElementById("nav-section-cart-icon").innerHTML = itemCountHTML;           
+        document.getElementById("cart-count").innerHTML = itemCountHTML;
+        document.getElementById("cart-count").innerHTML = itemCountHTML;           
     })    
 }
 
@@ -81,13 +81,13 @@ function addCustomerDetails() {
 function addOrder() {
     let itemsList = [];
     for(let i=0; i<cartItems.length; i++) {
-        tempDict = {
+        Order = {
             'product_id': cartItems[i].product_id._id,
             'product_name': cartItems[i].product_id.bookName,
             'product_quantity': cartItems[i].quantityToBuy,
             'product_price': cartItems[i].product_id.price,
         }
-        itemsList.push(tempDict);
+        itemsList.push(Order);
     }    
     let data = {
         "orders": itemsList
@@ -121,11 +121,11 @@ function getCartItemsInOrderSection() {
                                 `</div>`+                   
                             `</div>`
         }
-        document.getElementById("order-summery-section-order-description").innerHTML = cartItemsHTML;                 
+        document.getElementById("order-summery-section").innerHTML = cartItemsHTML;                 
     })    
 }
 
-function removeBookFromCart(i) {
+function removeBook(i) {
     let BooksRemove = cartItems[i];   
     let data = {
         "cartItem_id": BooksRemove._id
@@ -212,7 +212,7 @@ function validateState() {
     const landmark = document.getElementById('state');
     const landmarkError = document.getElementById('landmark-error');    
 
-    if(landmark.value == "") landmarkError.textContent = "Enter your landmark";        
+    if(landmark.value == "") landmarkError.textContent = "Enter your state";        
 }
 
 

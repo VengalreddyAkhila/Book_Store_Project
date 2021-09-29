@@ -39,38 +39,37 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
       let tempHTML = '';
 
-      let button_section = "button-section" + singlebook._id;
-      let cart_section = "add-cart-section" + singlebook._id;
-      let wishlist_section = "wishlist-section" + singlebook._id;
 
       tempHTML += `
      <div class="main-section1">
-         <div class="sub-section1">
+       
              <div class="sec1">
-         <div class="books1">
-             <img class="img1" src = "../Assests/book4.png" alt="" >
-             </div>
-             <div class="book-text1" style="width:1000px">
-             <h1 class="main-text1">`+ singlebook.bookName + `</h1>
-             <h class="sub-text1">`+ singlebook.author + `</h>
-             <div class="rating1">4.5 * </div>
-             <div class="cost1">RS.` + singlebook.price + `<hr></div>
-             <div class="description">Bookdetails:<br> ` + singlebook.description + ` </div>
-         </div>
-         </div>
-    <div class="button" id=" `+ button_section + `">
-    <button class="Addtobag" id="${singlebook._id}" >ADD TO BAG</button>
-    <button class="Whishlist" id="${singlebook._id}">WHISHLIST</button>
-    </div>
-    <div class="select-buttons">
-    <div class="add-cart" id=`+ cart_section + `>
-                                        <button class="cart-button">ADDED TO BAG</button>
-                                    </div>
-                                    <div class="add-wishlist" id=`+ wishlist_section + `>
-                                        <button class="wishlist-button">WISHLIST</button>
-                                    </div>
-                                    </div>
-    </div>
+                 <div class="books1">
+                       <img class="img1" src = "../Assests/book4.png" alt="" >
+                        <div class="button" >
+                              <button class="Addtobag" id="${singlebook._id}" >ADD TO BAG</button>
+                              <button class="Whishlist" id="${singlebook._id}" >&#9825; WHISHLIST</button>
+                        </div>
+                 </div>
+                  <div class="book-text1" >
+                       <h1 class="main-text1">`+ singlebook.bookName + `</h1>
+                        <h class="sub-text1">`+ singlebook.author + `</h>
+                        <div class="rating1">4.5 * </div>
+                        <div class="cost1">RS.` + singlebook.price + `</div>
+                        <div class="description"><h3>Bookdetails:</h3> ` + singlebook.description + ` </div>
+                        <div class="feedback" ><h2>Customer Feedback:</h2></div>
+                        <div class="overallrating"><h>overall rating</h></div>
+                        <div >
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        </div>
+                        <button class="submit-btn">Submit</button>
+                  </div>
+             </div>     
+   
   </div>`;
 
       //console.log(singlebook._id)
@@ -119,16 +118,7 @@ $(document).on('click', '.Whishlist', (event) => {
     .catch((err) => {
       console.log(err);
     })
-  if (document.getElementById('button-section' + event.currentTarget.id)) {
-    if (document.getElementById('button-section' + event.currentTarget.id).style.display == 'none') {
-      document.getElementById('button-section' + event.currentTarget.id).style.display = 'block';
-      document.getElementById('add-cart-section' + event.currentTarget.id).style.display = 'none';
-    }
-    else {
-      document.getElementById('button-section' + event.currentTarget.id).style.display = 'none';
-      document.getElementById('add-cart-section' + event.currentTarget.id).style.display = 'block';
-    }
-  }
+
 
 })
 

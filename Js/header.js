@@ -1,24 +1,30 @@
 document.getElementById("header-content").innerHTML = `
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <form class="d-flex">
-      <span class="nav-icon1">
-          <img src="../Assests/bookimg.png">
+<div class="header-section">
+<div class="book-img">
+    <img class="bookimg" src="../Assests/bookimg.png" alt="">
+    <h1 class="bookstore">Bookstore</h1>
+</div>
+<input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content"> 
+<div class="nav-button"  >
+ <div class="dropdown">
+   <button class="dropbtn"><i class="fa fa-user-o" ></i>
+   <h class="user" >user<h>    
+   </button>
+     
+   <div class="dropdown-content">
+     <a href="#">My Profile</a>
+     <a href="#">My Orders</a>
+     <a href="../Pages/whishlist.html">My Whishlist</a>
+     <a href="">Logout</a>
+   </div>
+ </div>   
+ 
+<span class="cart-section"   >
+    <img class="cart"  src="../Assests/cart.png" alt="" onclick="cartpage()">
+    <h style="font-size:20px">cart</h>
       </span>
-      <span class="nav-icon2">Bookstore</span>
-      <span class="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      </span>
-      
-      <span><i class="fa fa-user-o" aria-hidden="true"></i>
-      </span>
-      <span class="nav-icon4">
-        <img src="../Assests/cart.png" >
-        <li style="list-style-type:none" class="cart-title-in-header">cart</li>
-        <span class="nav-section-cart-count" id="nav-section-cart-icon"></span>
-      
-      </span>
-    </form>
-  </div>
-  </nav>
+      <span class="cart-count" id="cart-count"></span>
+      </div>
+</div>
+
 `
