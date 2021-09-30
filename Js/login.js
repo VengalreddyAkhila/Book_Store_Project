@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
          .then(res=> {
              console.log(res.data);                    
                  localStorage.setItem("token", res.data.result.accessToken);
-          //  window.location.href="../Pages/homepage.html"; 
+            window.location.href="../Pages/homepage.html"; 
             // localStorage.setItem("Accesstoken",JSON.parse(res).result.accessToken);
              //localStorage.getItem("x-access-token",JSON.parse(res).result.accessToken);
              

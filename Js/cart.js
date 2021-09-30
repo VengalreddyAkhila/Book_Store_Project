@@ -15,7 +15,7 @@ getService("​/bookstore_user/get_cart_items", headerconfig)
         let cartItemsHTML=``;
         cartItems = res.data.result;
         let itemCountHTML=``;
-        itemCountHTML += `<span class="cart-item-count">` +cartItems.length +` )</span>`
+        itemCountHTML += `<span class="cart-item-count">` +cartItems.length +` </span>`
         for(let i=0; i<cartItems.length; i++) {
             console.log(cartItems[0]._id);
             cartItemsHTML +=    `<div class="cart-item-section">`+
@@ -73,7 +73,7 @@ function addCustomerDetails() {
     putService("/bookstore_user/edit_user",data, headerconfig)
     .then(res=> {
         console.log(res.data.result);
-        addOrder();
+       
         })
         .catch((err) => {
             console.log(err);

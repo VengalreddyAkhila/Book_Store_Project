@@ -12,10 +12,10 @@ document.getElementById("header-content").innerHTML = `
    </button>
      
    <div class="dropdown-content">
-     <a href="#">My Profile</a>
+     <a href="../Pages/homepage.html">Homepage</a>
      <a href="../Pages/orderspage.html">My Orders</a>
      <a href="../Pages/whishlist.html">My Whishlist</a>
-     <a href="../Pages/login.html">Logout</a>
+     <span class="logout" onclick="logout()">Logout</a>
    </div>
  </div>   
  
@@ -28,3 +28,9 @@ document.getElementById("header-content").innerHTML = `
 </div>
 
 `
+
+function logout(){
+  let account = localStorage.clear();
+  window.location.replace("../Pages/login.html");
+  console.log(account)
+}
