@@ -94,6 +94,8 @@ function getWishlistInCart(i) {
 }
 
 
-
+function cartpage() {
+    window.location.replace('../Pages/cart.html');
+  }
 
 

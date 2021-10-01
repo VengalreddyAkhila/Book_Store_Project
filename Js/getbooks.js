@@ -60,3 +60,6 @@ $(document).on('click', '.sec', (event) => {
   window.location.href = str;
 })
 
+function cartpage() {
+  window.location.replace('../Pages/cart.html');
+}

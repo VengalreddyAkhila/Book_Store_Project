@@ -15,7 +15,7 @@ getService("​/bookstore_user/get_cart_items", headerconfig)
         let cartItemsHTML=``;
         cartItems = res.data.result;
         let itemCountHTML=``;
-        itemCountHTML += `<span class="cart-item-count">` +cartItems.length +` </span>`
+        itemCountHTML += `<span class="cart-item-count">` +cartItems.length +`) </span>`
         for(let i=0; i<cartItems.length; i++) {
             console.log(cartItems[0]._id);
             cartItemsHTML +=    `<div class="cart-item-section">`+
@@ -49,8 +49,7 @@ getService("​/bookstore_user/get_cart_items", headerconfig)
         document.getElementById("place-order-section").innerHTML = cartItemsHTML;        
         document.getElementById("cart-count").innerHTML = itemCountHTML;
         document.getElementById("place-order-section-cart-count").innerHTML = itemCountHTML;
-        document.getElementById("cart-count").innerHTML = itemCountHTML;
-        document.getElementById("cart-count").innerHTML = itemCountHTML;           
+            
     })    
 }
 
@@ -246,3 +245,7 @@ function orderSummery() {
         }
     }
 } 
+
+function cartpage() {
+    window.location.replace('../Pages/cart.html');
+  }

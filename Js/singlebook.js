@@ -58,6 +58,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         <div class="cost1">RS.` + singlebook.price + `</div>
                         <div class="description"><h3>Bookdetails:</h3> ` + singlebook.description + ` </div>
                         <div class="feedback" ><h2>Customer Feedback:</h2></div>
+                        <div class="feedback-box">
                         <div class="overallrating"><h>overall rating</h></div>
                         <div >
                         <span class="fa fa-star checked"></span>
@@ -66,8 +67,36 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                         </div>
+                        <label for="email"></label>
+                        <input class ="review-box " type="email" id="email" name="email" placeholder="write your review">
                         <button class="submit-btn">Submit</button>
+                        </div>
+                        <div class="review1">
+                        <div class="text">
+                        <div class = "review-text">AC</div>
+                       <h>Aniket Chile</h></div>
+                        <div class="star" >
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        </div>
+                        <p class="para">Good Product Even though the translation could have been better .Chnakya's neeti are thought  provoking </p>
                   </div>
+                  <div class="review1">
+                  <div class="text">
+                  <div class = "review-text">SB</div>
+                 <h>Swetha Bodkar</h></div>
+                  <div class="star" >
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  </div>
+                  <p class="para">Good Product Even though the translation could have been better .Chnakya's neeti are thought  provoking </p>
+            </div>
              </div>     
    
   </div>`;

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/orderspage.css">
     <link rel="stylesheet" href="../css/header.css">
+  
+    <link rel="stylesheet" href="../css/whishlist.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
      <title>Book Store</title>
 </head>
@@ -14,11 +16,31 @@
   <div id=header-content class="header-section">
                 
   </div>
- <div class="item-list" id="list" ></div>
+  <div class="main-section">            
+    <div class="main-section-container" id="item-container">
+
+        <!-- ------------cart item section------------ -->
+
+        <div class="place-order-section" id="place-order-page">
+            <div class="section1">
+                <div class="subsection2">
+                    <div class="wishlist-header">
+                        <h1 class="cart-title">My Orders(
+                        
+                        <span class="whishlist-book" id="orders-book-count"></span></h1>
+                    </div>
+                    <div class="title-section" id="order-page"></div>
+                </div>
+            </div>                   
+        </div>  
+        
+        
+    </div>
+</div>    
  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script   src="../js/oderspage.js"></script>
-  <script   src="../service/axiox.js"></script>
+  <script  src="../js/oderspage.js"></script>
+  <script  src="../service/axiox.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script   src="../js/header.js"></script>
