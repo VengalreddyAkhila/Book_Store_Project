@@ -10,12 +10,12 @@ body {
     overflow-x: hidden;
 }
 
-
-.body-container {
+.body-container {   
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding-left: 150px;
    
 }
 
@@ -112,7 +112,7 @@ body {
 .button-container {
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 500px;
+    padding-left: 400px;
 }
 
 .button-section {
@@ -272,14 +272,8 @@ label {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
-
-
-
-
-
 .continue-button {
-    padding-left: 500px;
+    padding-left: 400px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -435,6 +429,9 @@ label {
     }
     .continue-button{
         padding-left: 360px;
+    }
+    .body-container{
+        padding-left: 0px;
     }
 }
 

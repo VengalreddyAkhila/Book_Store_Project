@@ -1,6 +1,5 @@
 
 .form{
-  
     height: 100%;
     padding-left: 20%;
     display: flex;
@@ -10,18 +9,19 @@
     justify-content: center;
 
 }
-.book-img {
-   
+.book-img {   
     width: 55%;    
     border-radius: 100%;
+    padding-left: 20px;
+    padding-top: 10px;
     
 }
 .text{
-    margin-left:12%;
+    padding-left: 20px;
 }
-.form-container{
-   
- 
+
+
+.form-container{ 
     width: 40%;
     max-height: 60%;
     background-color: white;
@@ -29,9 +29,10 @@
     flex-direction: column;
     font-size: 8px;
     border-radius: 10px;
+    
   
 }
-.loginsignup{
+.loginsignup{   
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     max-height: 60%;
     width: 25%;
@@ -40,7 +41,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-   left: -10%;
+   left: -15%;
     background-color: white;
     border-radius: 10px;
 }
@@ -113,18 +114,21 @@ a:hover{
     flex-direction: column;
     margin-left: 10px;
 }
-@media screen and (max-width:1024px) and (min-width:901px) {
+@media screen and (max-width:1024px) and (min-width:901px)  {
    
-    .form-container{
-    
+    .form-container{    
         width: 50%;
-      
-    }
-    .loginsignup{
-        
+        margin-bottom: 75%;     
        
-        width: 30%;
     }
+    .loginsignup{      
+        margin-bottom: 75%;     
+        width: 30%;
+        left: -20%;
+    }
+    .form{
+        height: 100%;
+    } 
        
 }
 @media screen and (max-width:900px) and (min-width:801px){
@@ -133,7 +137,7 @@ a:hover{
         padding-left: 10%;
     }
     .form-container{
-     
+        margin-bottom: 45%;     
         width: 50%;
    
     }
@@ -150,39 +154,35 @@ a:hover{
         padding-left: 10%;
     }
     .form-container{
-  
+        margin-bottom: 55%;    
         width: 50%;
        
        
     }
-    .loginsignup{
-   
-       
+    .loginsignup{   
+        margin-bottom: 55%;  
         width: 40%;
       
 
     }
 }
-@media screen and (max-width:600px) and (min-width:401px){
+@media screen and (max-width:600px) {
     .form{
         
         padding-left: 10%;
     }
-    .form-container{
-      
+    .form-container{      
         width: 50%;
-      
+        margin-bottom: 35%;  
        
     }
-    .loginsignup{
-      
-       
+    .loginsignup{      
+        margin-bottom: 35%;  
         width: 35%;
         
     }
     input{
-        width: 100px;
-      
+        width: 100px;     
      
     }
     label{
@@ -225,21 +225,25 @@ a:hover{
 }
 @media screen and (max-width:400px){
     .form{
-        
+        width: 100%;
         padding-left: 10%;
     }
-    .form-container{
+    .form-container{     
+        width: 60% !important;  
+        margin-top: 30%;
      
-        width: 50%;
-        height: 30%;
-        margin-top: 50%;
+     
     }
     .loginsignup{
      
-        height: 40%;
+        height: 30%;
         width: 40%;
-        margin-left: 32%;
+        
         margin-top: 35%;
+    }
+    .book-img{
+        width: 80%;
+        border-radius: 100%;
     }
  
     input{
@@ -275,6 +279,8 @@ a:hover{
     }
     .text{
         font-size: 8px;
+        width: 100%;
+      
     }
     .or{
         font-size: 10px;

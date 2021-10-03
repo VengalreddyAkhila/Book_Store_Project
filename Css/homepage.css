@@ -23,8 +23,8 @@ body {
 }
 .bookscount{
     margin-top: 5%;
+   
 }
-
 
   .main-section{
       width: 20%;
@@ -75,6 +75,7 @@ body {
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: center;
   }
   .cost{
     margin-top: 2%;
@@ -111,8 +112,9 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 10px;
-    position: relative;
-    margin-left: 15%;
+    position: relative;  
+    justify-content: center;
+    align-items: center;
 
     }
     .booksection{
@@ -151,39 +153,31 @@ body {
             color: white;
             background-color: black;
             font-size: 5px;
-            height: 50px;
-           
+            height: 50px;           
             display: flex;
             align-items: center;
            margin-top: 10%;
         }
-     
-
-            
-    @media screen and (max-width:1024px) and (min-width:900px){
-        
-           
-       
+@media screen and (max-width:1024px) and (min-width:900px){      
         .main-section{
             width: 25%;
         }
-     
-       
-    }
-    @media screen and (max-width:800px) and (min-width:600px) {
+     }
+  
+@media screen and (max-width:800px) and (min-width:600px) {
         .main-section{
             width: 40%;
-        }
-       
+        }       
         .pagination{
             margin-left: 20%;
         }
         .footer{
             width: 100%;
         }
+      
        
     }
-    @media screen and (max-width:600px) and (min-width:500px) {
+ @media screen and (max-width:600px) and (min-width:500px) {
         .main-section{
             width: 45%;
         }
@@ -203,7 +197,7 @@ body {
             width: 55%;
         }
         .main-list{
-            margin-left: 40%;
+            margin-left: 0px;
         }
       
         .pagination{
@@ -211,6 +205,12 @@ body {
         }
         .footer{
             width: 100%;
+        }
+    }
+    @media screen and (max-width:400px) {
+        .main-list{
+          
+            margin-left: 0px;
         }
     }
  
