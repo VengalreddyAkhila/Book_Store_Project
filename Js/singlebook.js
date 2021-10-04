@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         <div class="feedback" ><h2>Customer Feedback:</h2></div>
                         <div class="feedback-box">
                         <div class="overallrating"><h>overall rating</h></div>
-                        <div >
+                        <div class="checked-star">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>

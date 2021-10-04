@@ -22,8 +22,7 @@ function GetBooks() {
       // pages = BooksList.splice(0,8);
       // console.log(pages);
 
-      for (var i = 0; i < BooksList.length; i++) {
- 
+      for (var i = 0; i < BooksList.length; i++) { 
         
         nHTML += `
           
