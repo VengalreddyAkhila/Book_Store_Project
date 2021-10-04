@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         <span class="fa fa-star"></span>
                         </div>
                         <label for="email"></label>
-                        <input class ="review-box " type="email" id="email" name="email" placeholder="write your review">
+                        <input class ="review-box " type="email" id="email" name="review" placeholder="write your review">
                         <button class="submit-btn">Submit</button>
                         </div>
                         <div class="review1">
