@@ -49,6 +49,7 @@ getService("​/bookstore_user/get_cart_items", headerconfig)
         document.getElementById("place-order-section").innerHTML = cartItemsHTML;        
         document.getElementById("cart-count").innerHTML = itemCountHTML;
         document.getElementById("place-order-section-cart-count").innerHTML = itemCountHTML;
+       
             
     })    
 }
@@ -72,6 +73,18 @@ function addCustomerDetails() {
     putService("/bookstore_user/edit_user",data, headerconfig)
     .then(res=> {
         console.log(res.data.result);
+        document.getElementById('continuebutton').style.display = 'none';
+        if (document.getElementById('cart_page-section3')) {
+
+            if (document.getElementById('cart_page-section3').style.display == 'none') {
+                document.getElementById('cart_page-section3').style.display = 'block';
+                document.getElementById('order-summery-page').style.display = 'none';
+            }
+            else {
+                document.getElementById('cart_page-section3').style.display = 'none';
+                document.getElementById('order-summery-page').style.display = 'block';
+            }
+        }
        
         })
         .catch((err) => {
@@ -193,7 +206,7 @@ function validatePhone() {
 
 function validateAddress() {
     const address = document.getElementById('address');
-    const addressError = document.getElementById('address-error');    
+    const addressError = document.getElementById('address-error');        
 
     if(address.value == "") addressError.textContent = "Enter your address";        
 }
@@ -202,23 +215,30 @@ function validateAddress() {
 
 function validateTown() {
     const town = document.getElementById('state');
-    const townError = document.getElementById('state-error');    
-
-    if(town.value == "") townError.textContent = "Enter your city or town";        
+    const townError = document.getElementById('state-error');  
+    let townRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{3,}$');  
+    if(townRegex.test(town.value))   
+    townError.textContent = "";
+    else townError.textContent = "Enter your city or town";        
 }
 
 // state validation    
 
 function validateState() {
     const landmark = document.getElementById('state');
-    const landmarkError = document.getElementById('landmark-error');    
+    const landmarkError = document.getElementById('landmark-error');  
+    let landmarkRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{3,}$');  
 
-    if(landmark.value == "") landmarkError.textContent = "Enter your state";        
+    if(landmarkRegex.test(landmark.value))   
+
+    landmarkError.textContent = "";
+    else landmarkError.textContent = "Enter your state";        
 }
 
 
 
 function placeorder() {
+    document.getElementById('placeorderbutton').style.display = 'none';
     if (document.getElementById('place-order-page')) {
 
         if (document.getElementById('cart_page-section2').style.display == 'none') {
@@ -232,19 +252,7 @@ function placeorder() {
     }
 }
 
-function orderSummery() {
-    if (document.getElementById('cart_page-section3')) {
 
-        if (document.getElementById('cart_page-section3').style.display == 'none') {
-            document.getElementById('cart_page-section3').style.display = 'block';
-            document.getElementById('order-summery-page').style.display = 'none';
-        }
-        else {
-            document.getElementById('cart_page-section3').style.display = 'none';
-            document.getElementById('order-summery-page').style.display = 'block';
-        }
-    }
-} 
 
 function cartpage() {
     window.location.replace('../Pages/cart.html');

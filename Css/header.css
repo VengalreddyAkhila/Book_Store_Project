@@ -155,8 +155,11 @@ color: #FFFFFF;
     }
   }
   @media screen and (max-width:600px) {
-    .bookimg{
-      margin-left: 40%;
+    .book-img{
+      margin-left: 10px;
+    }
+    .header-section{
+      justify-content: space-around;
     }
   }
   @media screen and (max-width:500px) {

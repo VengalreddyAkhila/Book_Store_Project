@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                  <div class="book1-img1">
                        <img class="img1" src = "../Assests/book4.png" alt="" >
                        </div>
-                        <div class="button" >
+                        <div class="button" id="button">
                               <button class="Addtobag" id="${singlebook._id}" >ADD TO BAG</button>
                               <button class="Whishlist" id="${singlebook._id}" >&#9825; WHISHLIST</button>
                         </div>
@@ -84,7 +84,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         <span>☆</span>
                         <span>☆</span>
                         </div>
-                        <p class="para">Good Product Even though the translation could have been better .Chnakya's neeti are thought  provoking </p>
+                        <p class="para">Good Product Even though the translation could have been better .Chnakya's neeti are thought  provoking.Chankyas had written many different topics and his writtings were excellent. </p>
                   </div>
                   <div class="review1">
                   <div class="text">
@@ -102,7 +102,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
              </div>     
    
   </div>`;
-console.log(singlebook.quantity)
+console.log(singlebook.quantityToBuy)
       console.log(singlebook._id)
       document.getElementById("list").innerHTML = tempHTML;
       console.log(document.getElementById("list"))
@@ -127,22 +127,13 @@ $(document).on('click', '.Addtobag', (event) => {
   postService(`/bookstore_user/add_cart_item/${event.currentTarget.id}`, data, headerconfig)
     .then(res => {
       console.log(res);
-     
+     // document.getElementById('button').style.display = 'none';
+     document.getElementById('subsection3').style.display = 'block';
     })
     .catch((err) => {
       console.log(err);
     })
-    if (document.getElementById("${singlebook._id}")) {
-
-      if (document.getElementById("${singlebook._id}").style.display == 'none') {
-          document.getElementById("${singlebook._id}").style.display = 'block';
-          document.getElementById('subsection3').style.display = 'none';
-      }
-      else {
-          document.getElementById("${singlebook._id}").style.display = 'none';
-          document.getElementById('subsection3').style.display = 'block';
-      }
-  }
+  
 
 })
 
@@ -198,7 +189,7 @@ $(document).on('click', '.add-count', (event) => {
   putService("/bookstore_user/cart_item_quantity/"+event.currentTarget.id +"", data, headerconfig)
   .then(res=> {
       console.log(res);
-      getCartItems();
+     
   })
 })
 
@@ -211,6 +202,6 @@ $(document).on('click', '.minus-count', (event) => {
   
   putService("/bookstore_user/cart_item_quantity/"+ event.currentTarget.id +"", data, headerconfig)
   .then(res=> {       
-      getCartItems();
+    console.log(res);
   })
 })
