@@ -24,6 +24,7 @@ body {
 .bookstore{
     margin-left: 15px;
     font-size: 30px;
+    font: normal normal normal 20px/26px Roboto;
 }
 .cart{
     margin-right: 8%;

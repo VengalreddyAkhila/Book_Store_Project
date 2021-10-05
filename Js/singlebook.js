@@ -1,22 +1,11 @@
-let BooksList = [];
 
+  let imagesList = ["book1.png", "book2.png", "book3.png", "book4.png", "book5.png", "book12.png", "book1.png", "book8.png", "book9.png", "book10.png", "book1.png", "book12.png", "book2.png", "book9.png", "book6.png", "book11.png"];
+  let path1 = "../Assests/";
 
 window.addEventListener('DOMContentLoaded', (event) => {
 
-
-  var imagesList = ["book1.png", "book2.png", "book3.png", "book4.png", "book5.png", "book12.png", "book1.png", "book8.png", "book9.png", "book10.png", "book1.png", "book12.png", "book2.png", "book9.png", "book6.png", "book11.png"];
-  var path1 = "../Assests/";
   console.log(path1)
   console.log(imagesList)
-
-
-  //window.location.href="../Pages/singlebook.html";
-  //console.log("akhila",i )
-  // let str = `../Pages/singlebook.html?i=${i}`
-  //   window.location.href= str;
-
-  // console.log("hai")
-
   getService("​/bookstore_user/get/book", headerconfig)
     .then(res => {
       console.log(res.data.result);
@@ -45,7 +34,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
        
              <div class="sec1">
                  <div class="books1">
+                 <div class="book1-img1">
                        <img class="img1" src = "../Assests/book4.png" alt="" >
+                       </div>
                         <div class="button" >
                               <button class="Addtobag" id="${singlebook._id}" >ADD TO BAG</button>
                               <button class="Whishlist" id="${singlebook._id}" >&#9825; WHISHLIST</button>
@@ -61,9 +52,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         <div class="feedback-box">
                         <div class="overallrating"><h>overall rating</h></div>
                         <div class="checked-star">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                         </div>
@@ -76,7 +67,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         <div class = "review-text">AC</div>
                        <h>Aniket Chile</h></div>
                         <div class="star" >
-                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked" ></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
