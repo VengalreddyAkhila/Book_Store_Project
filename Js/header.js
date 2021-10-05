@@ -7,9 +7,11 @@ document.getElementById("header-content").innerHTML = `
 <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content"> 
 <div class="nav-button"  >
  <div class="dropdown">
-   <button class="dropbtn"><i class="fa fa-user-o" ></i>
-   <h class="user" >user<h>    
+ <div class="text-user">
+   <button class="dropbtn"><i class="fa fa-user-o" ></i>   
    </button>
+   <h class="user" >user<h>    
+   </div>
      
    <div class="dropdown-content">
      <a href="../Pages/homepage.html">Homepage</a>
@@ -21,7 +23,7 @@ document.getElementById("header-content").innerHTML = `
  
 <span class="cart-section"   >
     <img class="cart"  src="../Assests/cart.png" alt="" onclick="cartpage()">
-    <h style="font-size:20px">cart</h>
+    <h >cart</h>
       </span>
       <span class="cart-count" id="cart-count"></span>
       </div>

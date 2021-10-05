@@ -16,17 +16,18 @@ body {
       height: 60%;
      }
   .sec1{
- 
+
        width: 100%;
       height: 100%;
       display: flex;
       flex-direction: row;
   }
   .books1{    
-      width: 45%;
-      height: 60%;
+    
+      width: 40%;
+      height: 70%;
       background-color: white;
-     margin-top: 40px;
+     margin-top: 30px;
       
       
   }
@@ -39,7 +40,7 @@ body {
       border: 1px solid gainsboro; 
       padding-top: 30px;
       padding-bottom: 30px;
-      margin-left: 30px;
+      margin-left: 70px;
   }
   .img1{
       width: 60%;
@@ -49,18 +50,24 @@ body {
     font: normal normal normal 12px/16px Roboto;
     letter-spacing: 0px;
     color: #0A0102;
+    padding-bottom: 3px;
     
   }
   .checked-star {
-    color: #707070;    
+    color: #707070;  
+    padding-bottom: 3px;  
   }
  
   .rating1{
       border: black;
-      width: 18%;
-      height: 30px;
+      width: 12%;
+      height: 3%;
       background: #388E3C 0% 0% no-repeat padding-box;
       border-radius: 1px;
+      text-align: left;
+font: normal normal bold 14px/19px Roboto;
+letter-spacing: 0px;
+color: #FFFFFF;
       color: white;     
       margin-top: 2%;     
       display: flex;
@@ -73,16 +80,16 @@ body {
     margin-bottom: 5%;
     font: normal normal medium 30px/39px Roboto;
     color: #0A0102;
-    font-weight: 20px;
+   
   }
   .main-text1{
-    font-size: 25px;
+    
     font: normal normal normal 28px/37px Roboto;
     letter-spacing: 0px;
     color: #0A0102;
   }
   .sub-text1{
-     font-size: 20px;
+    
     font: normal normal normal 18px/24px Roboto;
     letter-spacing: 0px;
     color: #878787;
@@ -103,7 +110,7 @@ body {
     font: normal normal normal 15px/20px Roboto;
     letter-spacing: 0px;
     color: #878787;
-    font-size: 20px;
+ 
   }
   .description{
     font: normal normal normal 12px/16px Roboto;
@@ -114,7 +121,7 @@ body {
       display: flex;
       flex-direction: row;
       margin-top: 20px;  
-    margin-left: 50px;   
+    margin-left: 100px;   
   }
 .Addtobag{
     height: 35px;
@@ -131,6 +138,49 @@ body {
     width: 35%;
     margin-left: 5px;
    
+}
+
+.subsection3 {
+    display: none;
+    padding-left: 100px;
+    padding-bottom: 40px;
+}
+
+.minus-count {
+    background: #FAFAFA;
+    border: 1px solid #DBDBDB;
+    opacity: 1;
+    border-radius: 25px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+
+.count {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    border-radius: 1px;
+    opacity: 1;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+.add-count {
+    background: #FAFAFA;
+    border: 1px solid #DBDBDB;
+    opacity: 1;
+    border-radius: 25px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.remove-section {
+    font: normal normal normal 12px/15px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+    padding-left: 15px;
+    cursor: pointer;
 }
 .add-cart{
     display: none;
@@ -167,29 +217,34 @@ body {
     padding-top: 30px;
 
     }
+   
     .submit-btn{
         border:none;
         background: #3371B5 0% 0% no-repeat padding-box;
         border-radius: 2px;
         color:white;
         height: 30px;
-        margin-left: 60%;
+        margin-left: 80%;
         width:20%;
+        padding-top: 3px;
        
     }
     .feedback-box{
-        
+        padding-left: 15px;
         height: 30%;
         padding-top: 20px;
         padding-bottom: 20px;
         background: #F5F5F5 0% 0% no-repeat padding-box;
         border-radius: 2px;
+       
         
     }    
     .review-box{
-        width: 40%;
+        width: 90%;
        height: 50%;      
        margin-left: 0px;
+       border: none;
+       padding-bottom: 5px;
          
     }
     .review1{

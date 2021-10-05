@@ -41,22 +41,33 @@ window.addEventListener('DOMContentLoaded', (event) => {
                               <button class="Addtobag" id="${singlebook._id}" >ADD TO BAG</button>
                               <button class="Whishlist" id="${singlebook._id}" >&#9825; WHISHLIST</button>
                         </div>
+                        
+                        <div class="subsection3" id="subsection3">
+
+                        <span class="minus-count" id="${singlebook.quantity}" ">-</span>
+                        <span class="quantity-section">
+                          <span class="count">`+ singlebook.quantity +`</span>
+                        </span>    
+                        <span class="add-count-section">
+                            <span class="add-count" id= "${singlebook.quantity}" >+</span>
+                        </span>
+                        </div>
                  </div>
                   <div class="book-text1" >
                        <h1 class="main-text1">`+ singlebook.bookName + `</h1>
                         <h class="sub-text1">`+ singlebook.author + `</h>
                         <div class="rating1">4.5 * </div>
-                        <div class="cost1">RS.` + singlebook.price + `</div>
-                        <div class="description"><h3>Bookdetails:</h3> ` + singlebook.description + ` </div>
+                        <div class="cost1">RS.` + singlebook.price + `<hr></div>
+                        <div class="description"><h3>Bookdetails:</h3> ` + singlebook.description + `<hr> </div>
                         <div class="feedback" ><h2>Customer Feedback:</h2></div>
                         <div class="feedback-box">
                         <div class="overallrating"><h>overall rating</h></div>
                         <div class="checked-star">
-                        <span class="fa fa-star "></span>
-                        <span class="fa fa-star "></span>
-                        <span class="fa fa-star "></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>☆</span>
                         </div>
                         <label for="email"></label>
                         <input class ="review-box " type="email" id="email" name="review" placeholder="write your review">
@@ -70,8 +81,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         <span class="fa fa-star checked" ></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+                        <span>☆</span>
+                        <span>☆</span>
                         </div>
                         <p class="para">Good Product Even though the translation could have been better .Chnakya's neeti are thought  provoking </p>
                   </div>
@@ -83,16 +94,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
+                  <span>☆</span>
+                  <span>☆</span>
                   </div>
                   <p class="para">Good Product Even though the translation could have been better .Chnakya's neeti are thought  provoking </p>
             </div>
              </div>     
    
   </div>`;
-
-      //console.log(singlebook._id)
+console.log(singlebook.quantity)
+      console.log(singlebook._id)
       document.getElementById("list").innerHTML = tempHTML;
       console.log(document.getElementById("list"))
 
@@ -116,10 +127,22 @@ $(document).on('click', '.Addtobag', (event) => {
   postService(`/bookstore_user/add_cart_item/${event.currentTarget.id}`, data, headerconfig)
     .then(res => {
       console.log(res);
+     
     })
     .catch((err) => {
       console.log(err);
     })
+    if (document.getElementById("${singlebook._id}")) {
+
+      if (document.getElementById("${singlebook._id}").style.display == 'none') {
+          document.getElementById("${singlebook._id}").style.display = 'block';
+          document.getElementById('subsection3').style.display = 'none';
+      }
+      else {
+          document.getElementById("${singlebook._id}").style.display = 'none';
+          document.getElementById('subsection3').style.display = 'block';
+      }
+  }
 
 })
 
@@ -163,3 +186,31 @@ $(document).on('click', '.Addtobag', (event) => {
 function continueshopping() {
   window.location.replace('../Pages/homepage.html');
 }
+
+
+$(document).on('click', '.add-count', (event) => {
+  console.log(event.currentTarget.id)
+
+  let data = {
+      "quantityToBuy": event.currentTarget.id + 1
+  }
+  
+  putService("/bookstore_user/cart_item_quantity/"+event.currentTarget.id +"", data, headerconfig)
+  .then(res=> {
+      console.log(res);
+      getCartItems();
+  })
+})
+
+
+$(document).on('click', '.minus-count', (event) => {
+  console.log(event.currentTarget.id)  
+  let data = {
+      "quantityToBuy": event.currentTarget.id - 1
+  }
+  
+  putService("/bookstore_user/cart_item_quantity/"+ event.currentTarget.id +"", data, headerconfig)
+  .then(res=> {       
+      getCartItems();
+  })
+})

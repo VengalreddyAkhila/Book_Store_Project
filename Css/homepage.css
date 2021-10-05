@@ -66,8 +66,12 @@ body {
   }
   .rating{
       border: black;
-      width: 25%;
-      height: 30px;
+      width: 15%;
+      height: 2%;
+      text-align: left;
+font: normal normal bold 10px/13px Roboto;
+letter-spacing: 0px;
+color: #FFFFFF;
       background: #388E3C 0% 0% no-repeat padding-box;
       border-radius: 1px;
       color: white;
