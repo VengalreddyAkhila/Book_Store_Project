@@ -16,8 +16,8 @@ body {
     display: flex;
     flex-direction: row;    
     color: white;
-   
-    width: 15%;
+  
+    width: 13%;
     justify-content: flex-end;
     align-items: center;
 }
@@ -130,6 +130,10 @@ color: #FFFFFF;
     .nav-button{
       padding-right: 8%;
     }
+    .book-img{
+        
+      justify-content: flex-start;
+    }
   }
   @media screen and (max-width:800px){
     input{
@@ -138,7 +142,7 @@ color: #FFFFFF;
     }
     .bookstore{
       margin-left: 8px;
-      font-size: 25px;
+      font: normal normal normal 20px/26px Roboto;
     }
     .bookimg{
       height: 2%;
@@ -148,24 +152,50 @@ color: #FFFFFF;
     .bookimg{
       margin-left: 40%;
     }
+    .book-img{
+
+      margin-left: 0px;
+    }
+    .bookstore{
+      font: normal normal normal 20px/26px Roboto;
+    }
   }
   @media screen and (max-width:500px) {
     .bookimg{
-      margin-left: 20%;
+      margin-left: 0px;
+      height: 20px;
     }
     .bookstore{
-      font-size: 20px;
+      font: normal normal normal 20px/26px Roboto;
+      margin-left: 0px;
+    }
+    .book-img{
+      
+margin-left: 0px;
+
+    }
+    #query{
+      margin-left: 0px;
+      display: none;
     }
   }
   @media screen  and (max-width:400px){
     .bookstore{
-      font-size: 20px;
+      font: normal normal normal 12px/18px Roboto;
+      margin-left: 0px;
     }
     .bookimg{
-      height: 2%;
-      margin-left: 20%;
+      
+      margin-left: 0px;
     }
-    input{
+    .cart-count{
+      width: 30px;
+      height: 10px;
+     border-radius: 5%;
+     
+    }
+    #query{
       display: none;
     }
+   
   }

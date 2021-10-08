@@ -33,6 +33,26 @@ body {
    
   
 }
+.discountprice{
+    display: flex;
+    flex-direction: row;
+
+  }
+  .dp{
+    text-decoration: line-through;
+    font: normal normal normal 9px/11px Lato;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    padding-top: 5px;
+    margin-left: 8px;
+  }
+  .cost1{
+    margin-top: 2%;
+    margin-bottom: 5%;
+    font: normal normal medium 30px/39px Roboto;
+    color: #0A0102;
+   
+  }
 
 .section1 {
     display: flex;
@@ -454,14 +474,15 @@ label {
         width: 72%;
     }
     .floating-input {
-        font-size: 14px;
+        font-size: 10px;
         margin-left: 0px;
     }
     .floating-input[type="address"] {
-        width: 212px;
+        width: 150px;
     }
     .cart-item-title {
         padding-left: 30px !important;
+        padding-top: 20px;
     }
     .subsection3 {
         padding-left: 0px;
@@ -484,14 +505,22 @@ label {
     .cart-image-item img {
         height: 110px;
     }
+    .type{
+        display: flex;
+        flex-direction: column;
+    }
  
   
 }
 
-@media only screen and (min-width: 400px) and (max-width: 760px) {
+@media only screen and (min-width: 401px) and (max-width: 760px) {
    
     .bottom-section h1 {
         padding-left: 40px;
+    }
+    .type{
+        display: flex;
+        flex-direction: column;
     }
    
     .section1, .section2, .section3 {
@@ -513,6 +542,7 @@ label {
     }
     .cart-item-title {
         padding-left: 30px !important;
+        padding-top: 20px;
     }
     .subsection3 {
         padding-top: 5%;

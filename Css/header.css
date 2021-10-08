@@ -164,10 +164,15 @@ color: #FFFFFF;
   }
   @media screen and (max-width:500px) {
     .bookimg{
-      margin-left: 20%;
+      margin-left: 0px;
+      height: 20px;
     }
     .bookstore{
       font: normal normal normal 20px/26px Roboto;
+    }
+    .book-img{
+    
+      margin-left: 40px;
     }
   }
   @media screen  and (max-width:400px){

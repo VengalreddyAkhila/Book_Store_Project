@@ -36,7 +36,7 @@ function validateEmail() {
          .then(res=> {
              console.log(res.data);                    
                  localStorage.setItem("token", res.data.result.accessToken);
-            window.location.href="../Pages/homepage.html"; 
+                 window.location.href="../Pages/homepage.html"; 
            
              
          })

@@ -30,7 +30,7 @@ function getWishlistItems() {
                                         `</div>` +  
                                         `<div class="cart-item-title" style="font-size:20px;">`+ res.data.result[i].product_id.bookName +`
                                             <li style="list-style: none" class="title2">`+ res.data.result[i].product_id.author +`</li>
-                                            <li style="list-style: none" class="title4">`+ res.data.result[i].product_id.price +`</li>` +
+                                            <li style="list-style: none" class="title4">Rs.`+ res.data.result[i].product_id.price +`</li>` +
                                         `</div>`+ 
                                         `<div class="wishlistToCart">` +
                                             `<button class="wishlistToCart-button" id=`+ i +` onclick="getWishlistInCart(id);getCartItemsInplaceOrder();removeBookFromWishlist(id);">Add to cart</button>` +

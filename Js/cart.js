@@ -15,7 +15,7 @@ getService("​/bookstore_user/get_cart_items", headerconfig)
         let cartItemsHTML=``;
         cartItems = res.data.result;
         let itemCountHTML=``;
-        itemCountHTML += `<span class="cart-item-count">` +cartItems.length +`) </span>`
+        itemCountHTML += `<span class="cart-item-count">` +cartItems.length +`   ) </span>`
         for(let i=0; i<cartItems.length; i++) {
             console.log(cartItems[0]._id);
             cartItemsHTML +=    `<div class="cart-item-section">`+
@@ -25,7 +25,10 @@ getService("​/bookstore_user/get_cart_items", headerconfig)
                                     `</div>` +  
                                     `<div class="cart-item-title">`+ cartItems[i].product_id.bookName +`
                                         <li style="list-style: none" class="title2">`+ cartItems[i].product_id.author +`</li>
-                                        <li style="list-style: none" class="title4">Rs. `+ cartItems[i].product_id.price +`</li>
+                                        <span class="discountprice">
+                                        <span class="cost1">Rs.` + cartItems[i].product_id.price + ` </span>
+                                        <s class="dp">Rs.` + cartItems[i].product_id.discountPrice + `</s>
+                                        </span>
                                         
                                     ` +
                                     `</div>`+ 

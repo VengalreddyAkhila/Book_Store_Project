@@ -35,8 +35,14 @@ function GetBooks() {
               <div class="book-text" id="book-text" >
               <h1 class="main-text">`+ BooksList[i].bookName + `</h1>
               <h class="sub-text">` + BooksList[i].author + `</h>
-              <p class="rating" >4.5 *</p>
-              <div class="cost">Rs.` + BooksList[i].price + `</div>
+              <span class="quantity">
+              <span class="rating" >4.5 *</span>
+              <span class="quan"> (` + BooksList[i].quantity +`)</span>
+              </span>
+              <span class="discountprice">
+              <span class="cost">Rs.` + BooksList[i].price + ` </span>
+              <s class="dp">Rs.` + BooksList[i].discountPrice + `</s>
+              </span>
           </div>
           </div>
          
