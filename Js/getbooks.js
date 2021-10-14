@@ -5,8 +5,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 let BooksList = [];
 var images = ["book1.png", "book2.png", "book3.png", "book4.png", "book5.png", "book12.png", "book1.png", "book8.png", "book9.png", "book10.png", "book1.png", "book12.png", "book2.png", "book9.png", "book6.png", "book11.png"];
 var path = "../Assests/";
-
-function GetBooks() {
+//let searchbooks;
+function GetBooks(searchbooks = '') {
  
 
   getService("​/bookstore_user/get/book", headerconfig)
@@ -23,6 +23,8 @@ function GetBooks() {
       // console.log(pages);
 
       for (var i = 0; i < BooksList.length; i++) { 
+        let filteredbooks = BooksList[i];
+        if ((BooksList[i].bookName.toLowerCase()).includes(searchbooks.toLowerCase())) {         
         
         nHTML += `
           
@@ -37,11 +39,11 @@ function GetBooks() {
               <h class="sub-text">` + BooksList[i].author + `</h>
               <span class="quantity">
               <span class="rating" >4.5 *</span>
-              <span class="quan"> (` + BooksList[i].quantity +`)</span>
+              
               </span>
               <span class="discountprice">
               <span class="cost">Rs.` + BooksList[i].price + ` </span>
-              <s class="dp">Rs.` + BooksList[i].discountPrice + `</s>
+             
               </span>
           </div>
           </div>
@@ -51,12 +53,25 @@ function GetBooks() {
       }
       document.getElementById("main-list").innerHTML = nHTML;
       console.log(i)
+      }
       
     })
 
     .catch((err) => {
       console.log(err);
     })
+}
+
+
+// if(searchbooks ==''){
+//   GetBooks();
+// }
+// GetBooks();
+
+function searchBook() {
+  searchbooks = document.getElementById('query').value
+  GetBooks(searchbooks);
+  
 }
 
 $(document).on('click', '.sec', (event) => {

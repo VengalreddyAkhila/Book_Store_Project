@@ -4,7 +4,7 @@ document.getElementById("header-content").innerHTML = `
     <img class="bookimg" src="../Assests/bookimg.png" alt="">
     <h1 class="bookstore">Bookstore</h1>
 </div>
-<input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content"> 
+<input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content" oninput="searchBook()"> 
 <div class="nav-button"  >
  <div class="dropdown">
  <div class="text-user">
