@@ -1,15 +1,15 @@
 window.addEventListener('DOMContentLoaded', (event) => {
   GetBooks();
 });
-//const Baseurl2 = "https://new-bookstore-backend.herokuapp.com/";
+const Baseurl = "https://new-bookstore-backend.herokuapp.com/";
 let BooksList = [];
 var images = ["book1.png", "book2.png", "book3.png", "book4.png", "book5.png", "book12.png", "book1.png", "book8.png", "book9.png", "book10.png", "book1.png", "book12.png", "book2.png", "book9.png", "book6.png", "book11.png"];
 var path = "../Assests/";
-//let searchbooks;
+let searchbooks;
 function GetBooks(searchbooks = '') {
  
-
-  getService("​/bookstore_user/get/book", headerconfig)
+  makePromiseCall("GET",`${Baseurl}bookstore_user/get/book`,true,{},true)
+  //getService("​/bookstore_user/get/book", headerconfig)
   .then(res=> {
       console.log(res.data.result);
       console.log(res.data.result.length);
@@ -23,7 +23,7 @@ function GetBooks(searchbooks = '') {
       // console.log(pages);
 
       for (var i = 0; i < BooksList.length; i++) { 
-        let filteredbooks = BooksList[i];
+      
         if ((BooksList[i].bookName.toLowerCase()).includes(searchbooks.toLowerCase())) {         
         
         nHTML += `
@@ -63,10 +63,10 @@ function GetBooks(searchbooks = '') {
 }
 
 
-// if(searchbooks ==''){
-//   GetBooks();
-// }
-// GetBooks();
+if(searchbooks ==''){
+  GetBooks();
+}
+GetBooks();
 
 function searchBook() {
   searchbooks = document.getElementById('query').value

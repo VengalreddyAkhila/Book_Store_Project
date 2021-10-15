@@ -32,11 +32,11 @@ function validateEmail() {
              "password" :password.value             
          }     
          console.log("data",data);
-         postService("/bookstore_user/login", data, headerconfig)
-         .then(res=> {
-             console.log(res.data);                    
-                 localStorage.setItem("token", res.data.result.accessToken);
-                 window.location.href="../Pages/homepage.html"; 
+         makePromiseCall("POST",`${Baseurl1}bookstore_user/login`,true,data)
+         .then((res) => {
+            console.log(JSON.parse(res));                
+            localStorage.setItem("Accesstoken",JSON.parse(res).result.accessToken);
+            window.location.href="../Pages/homepage.html"; 
            
              
          })

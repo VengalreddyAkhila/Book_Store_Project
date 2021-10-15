@@ -5,12 +5,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     getWishlistItems();
     getCartItemsInplaceOrder();
 });
-
+const Baseurl = "https://new-bookstore-backend.herokuapp.com/";
 // method to get wishlist items
 
 function getWishlistItems() {
- 
-    getService("/bookstore_user/get_wishlist_items", headerconfig)
+    makePromiseCall("GET",`${Baseurl}bookstore_user/get_wishlist_items`,true,{},true)
+    //getService("/bookstore_user/get_wishlist_items", headerconfig)
     .then(res=> {
         console.log(res.data.result);
         console.log(res.data.result.length);
@@ -54,8 +54,8 @@ function removeBookFromWishlist(i) {
     let data = {
         "cartItem_id": Remove._id
     }
-    
-    deleteService("/bookstore_user/remove_wishlist_item/"+Remove.product_id._id+"", data, headerconfig)
+    makePromiseCall("DELETE",`${Baseurl}bookstore_user/remove_wishlist_items/${Remove.product_id._id}`,true,data,true)
+   // deleteService("/bookstore_user/remove_wishlist_item/"+Remove.product_id._id+"", data, headerconfig)
     .then(res=> {
         getWishlistItems(); 
         getCartItemsInplaceOrder(); 
@@ -64,8 +64,8 @@ function removeBookFromWishlist(i) {
 
 
 function getCartItemsInplaceOrder() {
-   
-    getService("​/bookstore_user/get_cart_items", headerconfig)
+    makePromiseCall("GET",`${Baseurl}bookstore_user/get_cart_items`,true,{},true)
+    //getService("​/bookstore_user/get_cart_items", headerconfig)
     .then(res=> {
         console.log(res.data.result);
         console.log(res.data.result.length);
@@ -83,8 +83,8 @@ function getWishlistInCart(i) {
     let data = {
         "product_id": selecteBook._id
     }
-    
-    postService("/bookstore_user/add_cart_item/"+ selecteBook.product_id._id +"", data, headerconfig)
+    makePromiseCall("POST",`${Baseurl}bookstore_user/add_cart_item/${selecteBook._id}`,true,data,true)
+   // postService("/bookstore_user/add_cart_item/"+ selecteBook.product_id._id +"", data, headerconfig)
         .then(res=> {
             console.log(res);                           
         })  

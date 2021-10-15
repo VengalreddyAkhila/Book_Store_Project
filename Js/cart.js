@@ -7,8 +7,8 @@ let imageList1 =["book1.png", "book2.png", "book3.png", "book4.png", "book5.png"
 let path1 = "../Assests/";
 let cartItems = []
 function getCartItems() {
-
-getService("​/bookstore_user/get_cart_items", headerconfig)
+    makePromiseCall("GET",`${Baseurl2}bookstore_user/get_cart_items`,true,{},true)
+//getService("​/bookstore_user/get_cart_items", headerconfig)
 .then(res=> {
     console.log(res.data.result);
     console.log(res.data.result.length);
@@ -72,8 +72,8 @@ function addCustomerDetails() {
         "city": city.value,
         "state": state.value
     };  
-
-    putService("/bookstore_user/edit_user",data, headerconfig)
+    makePromiseCall("PUT",`${Baseurl2}bookstore_user/edit_user`,true,data,true)
+   // putService("/bookstore_user/edit_user",data, headerconfig)
     .then(res=> {
         console.log(res.data.result);
         document.getElementById('continuebutton').style.display = 'none';
@@ -109,15 +109,16 @@ function addOrder() {
     let data = {
         "orders": itemsList
     }
-
-    postService("/bookstore_user/add/order", data, headerconfig)
+    makePromiseCall("POST",`${Baseurl2}bookstore_user/add/order`,true,data,true)
+    //postService("/bookstore_user/add/order", data, headerconfig)
     .then(res=> {
         console.log(res.data.result);
         window.location.replace('../Pages/ordersucessful.html')
     })
 }
 function getCartItemsInOrderSection() {
-    getService("​/bookstore_user/get_cart_items", headerconfig)
+    makePromiseCall("GET",`${Baseurl2}bookstore_user/get_cart_items`,true,{},true)
+    //getService("​/bookstore_user/get_cart_items", headerconfig)
     .then(res=> {
         console.log(res.data.result);
       cartItems = res.data.result;
@@ -147,8 +148,8 @@ function removeBook(i) {
     let data = {
         "cartItem_id": BooksRemove._id
     }
-
-    deleteService("/bookstore_user/remove_cart_item/"+ BooksRemove._id+"", data, headerconfig)
+    makePromiseCall("DELETE",`${Baseurl2}bookstore_user/remove_cart_item/${BooksRemove._id}`,true,data,true)
+    //deleteService("/bookstore_user/remove_cart_item/"+ BooksRemove._id+"", data, headerconfig)
     .then(res=> {
               getCartItems();
     })
@@ -160,8 +161,8 @@ function increaseCartItems(i) {
     let data = {
         "quantityToBuy": IncreaseCount.quantityToBuy + 1
     }
-    
-    putService("/bookstore_user/cart_item_quantity/"+IncreaseCount._id +"", data, headerconfig)
+    makePromiseCall("PUT",`${Baseurl2}bookstore_user/cart_item_quantity/${IncreaseCount._id}`,true,data,true)
+    //putService("/bookstore_user/cart_item_quantity/"+IncreaseCount._id +"", data, headerconfig)
     .then(res=> {
         console.log(res);
         getCartItems();
@@ -174,8 +175,8 @@ function decreaseCartItems(i) {
     let data = {
         "quantityToBuy": DecreaseCount.quantityToBuy - 1
     }
-    
-    putService("/bookstore_user/cart_item_quantity/"+DecreaseCount._id +"", data, headerconfig)
+    makePromiseCall("PUT",`${Baseurl2}bookstore_user/cart_item_quantity/${DecreaseCount._id }`,true,data,true)
+    //putService("/bookstore_user/cart_item_quantity/"+DecreaseCount._id +"", data, headerconfig)
     .then(res=> {       
         getCartItems();
     })

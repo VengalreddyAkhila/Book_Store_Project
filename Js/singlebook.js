@@ -2,12 +2,14 @@
   let imagesList = ["book1.png", "book2.png", "book3.png", "book4.png", "book5.png", "book12.png", "book1.png", "book8.png", "book9.png", "book10.png", "book1.png", "book12.png", "book2.png", "book9.png", "book6.png", "book11.png"];
   let path1 = "../Assests/";
   let cartItems = [];
+  const Baseurl = "https://new-bookstore-backend.herokuapp.com/";
 
 window.addEventListener('DOMContentLoaded', (event) => {
 
   console.log(path1)
   console.log(imagesList)
-  getService("​/bookstore_user/get/book", headerconfig)
+  makePromiseCall("GET",`${Baseurl}bookstore_user/get/book`,true,{},true)
+  //getService("​/bookstore_user/get/book", headerconfig)
     .then(res => {
       console.log(res.data.result);
       console.log(res.data.result.length);
@@ -129,8 +131,8 @@ $(document).on('click', '.Addtobag', (event) => {
   let data = {
     "product_id": event.currentTarget.id
   }
-
-  postService(`/bookstore_user/add_cart_item/${event.currentTarget.id}`, data, headerconfig)
+  makePromiseCall("POST",`${Baseurl}bookstore_user/add_cart_item/${event.currentTarget.id}`,true,data,true)
+  //postService(`/bookstore_user/add_cart_item/${event.currentTarget.id}`, data, headerconfig)
     .then(res => {
       console.log(res);    
     })
@@ -148,8 +150,8 @@ $(document).on('click', '.Whishlist', (event) => {
   let data = {
     "product_id": event.currentTarget.id
   }
-
-  postService(`/bookstore_user/add_wish_list/${event.currentTarget.id}`, data, headerconfig)
+  makePromiseCall("POST",`${Baseurl}bookstore_user/add_wish_list/${event.currentTarget.id}`,true,data,true)
+ // postService(`/bookstore_user/add_wish_list/${event.currentTarget.id}`, data, headerconfig)
     .then(res => {
       console.log(res);
     })
@@ -161,7 +163,8 @@ $(document).on('click', '.Whishlist', (event) => {
 })
 
 $(document).on('click', '.Addtobag', (event) => {
-  getService("​/bookstore_user/get_cart_items", headerconfig)
+  makePromiseCall("GET",`${Baseurl}bookstore_user/get_cart_items`,true,{},true)
+  //getService("​/bookstore_user/get_cart_items", headerconfig)
     .then(res => {
       console.log(res.data.result);
       console.log(res.data.result.length);
@@ -192,8 +195,8 @@ $(document).on('click', '.add-count', (event) => {
     let data = {
         "quantityToBuy": event.currentTarget.quantity + 1
     }
-    
-    putService("/bookstore_user/cart_item_quantity/"+event.currentTarget.id +"", data, headerconfig)
+    makePromiseCall("PUT",`${Baseurl}bookstore_user/cart_item_quantity/${event.currentTarget.id}`,true,data,true)
+    //putService("/bookstore_user/cart_item_quantity/"+event.currentTarget.id +"", data, headerconfig)
     .then(res=> {
         console.log(res);     
    
@@ -207,8 +210,8 @@ $(document).on('click', '.minus-count', (event) => {
     let data = {
         "quantityToBuy": event.currentTarget.quantity - 1
     }
-    
-    putService("/bookstore_user/cart_item_quantity/"+event.currentTarget.id+"", data, headerconfig)
+    makePromiseCall("PUT",`${Baseurl}bookstore_user/cart_item_quantity/${event.currentTarget.id}`,true,data,true)
+    //putService("/bookstore_user/cart_item_quantity/"+event.currentTarget.id+"", data, headerconfig)
     .then(res=> {       
        console.log(res);
 

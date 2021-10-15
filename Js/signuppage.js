@@ -50,9 +50,7 @@ function validatePhone() {
   
 const Baseurl =  "https://new-bookstore-backend.herokuapp.com/";
     function signup () {
-        const headerconfig = {   
-            'Content-Type': 'application/json',            
-          };
+      
           validateName();
           validateEmail();
           validatePhone();
@@ -65,9 +63,9 @@ const Baseurl =  "https://new-bookstore-backend.herokuapp.com/";
              "phone" : mobilenumber.value
          }   
          console.log("data",data);
-         postService("/bookstore_user/registration", data, headerconfig)
-         .then(res=> {
-             console.log(res);   
+         makePromiseCall("POST",`${Baseurl}bookstore_user/registration`,true,data)
+         .then((res) => {
+             console.log(res);  
            
              //window.location.href="../Pages/login.html"; 
              
