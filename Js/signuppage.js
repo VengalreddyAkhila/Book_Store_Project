@@ -65,8 +65,9 @@ const Baseurl =  "https://new-bookstore-backend.herokuapp.com/";
          console.log("data",data);
          makePromiseCall("POST",`${Baseurl}bookstore_user/registration`,true,data)
          .then((res) => {
-             console.log(res);  
-           
+             //console.log(res);  
+             console.log(JSON.parse(res));
+             
              //window.location.href="../Pages/login.html"; 
              
          })

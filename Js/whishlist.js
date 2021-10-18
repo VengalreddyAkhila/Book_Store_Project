@@ -6,31 +6,31 @@ window.addEventListener('DOMContentLoaded', (event) => {
     getCartItemsInplaceOrder();
 });
 const Baseurl = "https://new-bookstore-backend.herokuapp.com/";
-// method to get wishlist items
 
 function getWishlistItems() {
     makePromiseCall("GET",`${Baseurl}bookstore_user/get_wishlist_items`,true,{},true)
     //getService("/bookstore_user/get_wishlist_items", headerconfig)
     .then(res=> {
-        console.log(res.data.result);
-        console.log(res.data.result.length);
+        console.log(JSON.parse(res).result);    
+      console.log(JSON.parse(res).result.length);   
+
         let wishlistItemsHTML=``;
-        wishlistItemList = res.data.result;
+        wishlistItemList = JSON.parse(res).result;
         let wishlistCountHTML=``;
-        wishlistCountHTML += `<span>` + res.data.result.length + `)</span>` 
+        wishlistCountHTML += `<span>` + JSON.parse(res).result.length + `)</span>` 
         
                        
         document.getElementById("whishlist-book-count").innerHTML = wishlistCountHTML; 
-        for(let i=0; i<res.data.result.length; i++) {
-            console.log(res.data.result[0]._id);
+        for(let i=0; i<wishlistItemList.length; i++) {
+            console.log(wishlistItemList[0]._id);
             wishlistItemsHTML += `<div class="wishlist-item-section">`+
                                     
                                         `<div class="cart-image-item">`+
                                             `<img src="`+ path1 + imageList1[i] + `">`+
                                         `</div>` +  
-                                        `<div class="cart-item-title" style="font-size:20px;">`+ res.data.result[i].product_id.bookName +`
-                                            <li style="list-style: none" class="title2">`+ res.data.result[i].product_id.author +`</li>
-                                            <li style="list-style: none" class="title4">Rs.`+ res.data.result[i].product_id.price +`</li>` +
+                                        `<div class="cart-item-title" style="font-size:20px;">`+ wishlistItemList[i].product_id.bookName +`
+                                            <li style="list-style: none" class="title2">`+ wishlistItemList[i].product_id.author +`</li>
+                                            <li style="list-style: none" class="title4">Rs.`+ wishlistItemList[i].product_id.price +`</li>` +
                                         `</div>`+ 
                                         `<div class="wishlistToCart">` +
                                             `<button class="wishlistToCart-button" id=`+ i +` onclick="getWishlistInCart(id);getCartItemsInplaceOrder();removeBookFromWishlist(id);">Add to cart</button>` +
@@ -67,10 +67,10 @@ function getCartItemsInplaceOrder() {
     makePromiseCall("GET",`${Baseurl}bookstore_user/get_cart_items`,true,{},true)
     //getService("​/bookstore_user/get_cart_items", headerconfig)
     .then(res=> {
-        console.log(res.data.result);
-        console.log(res.data.result.length);
+        console.log(JSON.parse(res).result);    
+      console.log(JSON.parse(res).result.length);   
         let itemCountHTML=``;
-        itemCountHTML += `<div class="cart-item-count">`+ res.data.result.length +
+        itemCountHTML += `<div class="cart-item-count">`+ JSON.parse(res).result.length +
         
                          `</div>`                         
         document.getElementById("cart-count").innerHTML = itemCountHTML;
@@ -86,7 +86,7 @@ function getWishlistInCart(i) {
     makePromiseCall("POST",`${Baseurl}bookstore_user/add_cart_item/${selecteBook._id}`,true,data,true)
    // postService("/bookstore_user/add_cart_item/"+ selecteBook.product_id._id +"", data, headerconfig)
         .then(res=> {
-            console.log(res);                           
+            console.log(JSON.parse(res).result);                          
         })  
         .catch((err) => {
             console.log(err);

@@ -3,17 +3,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
     getCartItems();
     getCartItemsInOrderSection();
 });
+const Baseurl = "https://new-bookstore-backend.herokuapp.com/";
 let imageList1 =["book1.png", "book2.png", "book3.png", "book4.png", "book5.png", "book12.png", "book1.png", "book8.png", "book9.png", "book10.png", "book1.png", "book12.png", "book2.png", "book9.png", "book6.png", "book11.png"];
 let path1 = "../Assests/";
 let cartItems = []
 function getCartItems() {
-    makePromiseCall("GET",`${Baseurl2}bookstore_user/get_cart_items`,true,{},true)
+    makePromiseCall("GET",`${Baseurl}bookstore_user/get_cart_items`,true,{},true)
 //getService("​/bookstore_user/get_cart_items", headerconfig)
 .then(res=> {
-    console.log(res.data.result);
-    console.log(res.data.result.length);
+    console.log(JSON.parse(res).result);    
+      console.log(JSON.parse(res).result.length);  
         let cartItemsHTML=``;
-        cartItems = res.data.result;
+        cartItems =JSON.parse(res).result;
         let itemCountHTML=``;
         itemCountHTML += `<span class="cart-item-count">` +cartItems.length +`   ) </span>`
         for(let i=0; i<cartItems.length; i++) {
@@ -72,10 +73,10 @@ function addCustomerDetails() {
         "city": city.value,
         "state": state.value
     };  
-    makePromiseCall("PUT",`${Baseurl2}bookstore_user/edit_user`,true,data,true)
+    makePromiseCall("PUT",`${Baseurl}bookstore_user/edit_user`,true,data,true)
    // putService("/bookstore_user/edit_user",data, headerconfig)
     .then(res=> {
-        console.log(res.data.result);
+        console.log(JSON.parse(res).result);   
         document.getElementById('continuebutton').style.display = 'none';
         if (document.getElementById('cart_page-section3')) {
 
@@ -109,19 +110,19 @@ function addOrder() {
     let data = {
         "orders": itemsList
     }
-    makePromiseCall("POST",`${Baseurl2}bookstore_user/add/order`,true,data,true)
+    makePromiseCall("POST",`${Baseurl}bookstore_user/add/order`,true,data,true)
     //postService("/bookstore_user/add/order", data, headerconfig)
     .then(res=> {
-        console.log(res.data.result);
+        console.log(JSON.parse(res).result);   
         window.location.replace('../Pages/ordersucessful.html')
     })
 }
 function getCartItemsInOrderSection() {
-    makePromiseCall("GET",`${Baseurl2}bookstore_user/get_cart_items`,true,{},true)
+    makePromiseCall("GET",`${Baseurl}bookstore_user/get_cart_items`,true,{},true)
     //getService("​/bookstore_user/get_cart_items", headerconfig)
     .then(res=> {
-        console.log(res.data.result);
-      cartItems = res.data.result;
+        console.log(JSON.parse(res).result);   
+      cartItems =JSON.parse(res).result;
       let cartItemsHTML=``;
         for(let i=0; i<cartItems.length; i++) {
            
@@ -148,7 +149,7 @@ function removeBook(i) {
     let data = {
         "cartItem_id": BooksRemove._id
     }
-    makePromiseCall("DELETE",`${Baseurl2}bookstore_user/remove_cart_item/${BooksRemove._id}`,true,data,true)
+    makePromiseCall("DELETE",`${Baseurl}bookstore_user/remove_cart_item/${BooksRemove._id}`,true,data,true)
     //deleteService("/bookstore_user/remove_cart_item/"+ BooksRemove._id+"", data, headerconfig)
     .then(res=> {
               getCartItems();
@@ -161,10 +162,10 @@ function increaseCartItems(i) {
     let data = {
         "quantityToBuy": IncreaseCount.quantityToBuy + 1
     }
-    makePromiseCall("PUT",`${Baseurl2}bookstore_user/cart_item_quantity/${IncreaseCount._id}`,true,data,true)
+    makePromiseCall("PUT",`${Baseurl}bookstore_user/cart_item_quantity/${IncreaseCount._id}`,true,data,true)
     //putService("/bookstore_user/cart_item_quantity/"+IncreaseCount._id +"", data, headerconfig)
     .then(res=> {
-        console.log(res);
+        console.log(JSON.parse(res));
         getCartItems();
     })
 }
@@ -175,7 +176,7 @@ function decreaseCartItems(i) {
     let data = {
         "quantityToBuy": DecreaseCount.quantityToBuy - 1
     }
-    makePromiseCall("PUT",`${Baseurl2}bookstore_user/cart_item_quantity/${DecreaseCount._id }`,true,data,true)
+    makePromiseCall("PUT",`${Baseurl}bookstore_user/cart_item_quantity/${DecreaseCount._id }`,true,data,true)
     //putService("/bookstore_user/cart_item_quantity/"+DecreaseCount._id +"", data, headerconfig)
     .then(res=> {       
         getCartItems();

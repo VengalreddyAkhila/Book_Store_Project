@@ -11,10 +11,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
   makePromiseCall("GET",`${Baseurl}bookstore_user/get/book`,true,{},true)
   //getService("​/bookstore_user/get/book", headerconfig)
     .then(res => {
-      console.log(res.data.result);
-      console.log(res.data.result.length);
+      console.log(JSON.parse(res).result);    
+      console.log(JSON.parse(res).result.length);   
 
-      BooksList = res.data.result;
+      BooksList = JSON.parse(res).result;
      
      
       const urlSearchParams = new URLSearchParams(window.location.search);
@@ -134,7 +134,7 @@ $(document).on('click', '.Addtobag', (event) => {
   makePromiseCall("POST",`${Baseurl}bookstore_user/add_cart_item/${event.currentTarget.id}`,true,data,true)
   //postService(`/bookstore_user/add_cart_item/${event.currentTarget.id}`, data, headerconfig)
     .then(res => {
-      console.log(res);    
+      console.log(JSON.parse(res));  
     })
     .catch((err) => {
       console.log(err);
@@ -153,7 +153,7 @@ $(document).on('click', '.Whishlist', (event) => {
   makePromiseCall("POST",`${Baseurl}bookstore_user/add_wish_list/${event.currentTarget.id}`,true,data,true)
  // postService(`/bookstore_user/add_wish_list/${event.currentTarget.id}`, data, headerconfig)
     .then(res => {
-      console.log(res);
+      console.log(JSON.parse(res)); 
     })
     .catch((err) => {
       console.log(err);
@@ -166,11 +166,11 @@ $(document).on('click', '.Addtobag', (event) => {
   makePromiseCall("GET",`${Baseurl}bookstore_user/get_cart_items`,true,{},true)
   //getService("​/bookstore_user/get_cart_items", headerconfig)
     .then(res => {
-      console.log(res.data.result);
-      console.log(res.data.result.length);
+      console.log(JSON.parse(res).result);    
+      console.log(JSON.parse(res).result.length);   
      
       let cartCountHTML = ``;
-      cartCountHTML += `<div class="cart-item-count">` + res.data.result.length + `</div>`
+      cartCountHTML += `<div class="cart-item-count">` + JSON.parse(res).result.length + `</div>`
     
       document.getElementById("cart-count").innerHTML = cartCountHTML;  
       //document.getElementById("${singlebook._id}").style.display = 'none';  
@@ -198,7 +198,7 @@ $(document).on('click', '.add-count', (event) => {
     makePromiseCall("PUT",`${Baseurl}bookstore_user/cart_item_quantity/${event.currentTarget.id}`,true,data,true)
     //putService("/bookstore_user/cart_item_quantity/"+event.currentTarget.id +"", data, headerconfig)
     .then(res=> {
-        console.log(res);     
+      console.log(JSON.parse(res));    
    
     })
 })
@@ -213,8 +213,7 @@ $(document).on('click', '.minus-count', (event) => {
     makePromiseCall("PUT",`${Baseurl}bookstore_user/cart_item_quantity/${event.currentTarget.id}`,true,data,true)
     //putService("/bookstore_user/cart_item_quantity/"+event.currentTarget.id+"", data, headerconfig)
     .then(res=> {       
-       console.log(res);
-
+      console.log(JSON.parse(res));    
     })
 })
 

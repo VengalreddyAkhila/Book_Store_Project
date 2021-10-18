@@ -1,20 +1,21 @@
 window.addEventListener('DOMContentLoaded', (event) => {
   GetBooks();
 });
-const Baseurl = "https://new-bookstore-backend.herokuapp.com/";
+const Baseurl0 = "https://new-bookstore-backend.herokuapp.com/";
 let BooksList = [];
 var images = ["book1.png", "book2.png", "book3.png", "book4.png", "book5.png", "book12.png", "book1.png", "book8.png", "book9.png", "book10.png", "book1.png", "book12.png", "book2.png", "book9.png", "book6.png", "book11.png"];
 var path = "../Assests/";
 let searchbooks;
 function GetBooks(searchbooks = '') {
  
-  makePromiseCall("GET",`${Baseurl}bookstore_user/get/book`,true,{},true)
+  makePromiseCall("GET",`${Baseurl0}bookstore_user/get/book`,true,{},true)
   //getService("​/bookstore_user/get/book", headerconfig)
   .then(res=> {
-      console.log(res.data.result);
-      console.log(res.data.result.length);
+    console.log(JSON.parse(res).result);    
+    console.log(JSON.parse(res).result.length);    
       var nHTML = '';
-      BooksList = res.data.result;
+      BooksList = JSON.parse(res).result;
+      console.log(BooksList)
       let bookCountHTML = ``;
       bookCountHTML += `<span>(` + BooksList.length + ` items)</span>`
       document.getElementById("homepage-book-count").innerHTML = bookCountHTML;
@@ -51,8 +52,7 @@ function GetBooks(searchbooks = '') {
           </div>        
           </div>`
       }
-      document.getElementById("main-list").innerHTML = nHTML;
-      console.log(i)
+      document.getElementById("main-list").innerHTML = nHTML;     
       }
       
     })
@@ -66,7 +66,6 @@ function GetBooks(searchbooks = '') {
 if(searchbooks ==''){
   GetBooks();
 }
-GetBooks();
 
 function searchBook() {
   searchbooks = document.getElementById('query').value
