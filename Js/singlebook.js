@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         </div>
                         <label for="email"></label>
                         <input class ="review-box " type="email" id="email" name="review" placeholder="write your review">
-                        <button class="submit-btn">Submit</button>
+                        <button class="submit-btn" id="${singlebook._id} ">Submit</button>
                         </div>
                         <div class="review1">
                         <div class="text">
@@ -138,8 +138,7 @@ $(document).on('click', '.Addtobag', (event) => {
     })
     .catch((err) => {
       console.log(err);
-    })
-  
+    }) 
 
 })
 
@@ -187,6 +186,24 @@ $(document).on('click', '.Addtobag', (event) => {
 function continueshopping() {
   window.location.replace('../Pages/homepage.html');
 }
+
+$(document).on('click', '.submit-btn', (event) => {
+  console.log(event.currentTarget.id)
+  let data = {
+    "product_id": event.currentTarget.id
+  }
+  makePromiseCall("GET",`${Baseurl}/bookstore_user/get/feedback/${event.currentTarget.id}`,true,data,true)
+  .then(res => {
+    console.log(JSON.parse(res)); 
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  
+
+})
+
+
 
 $(document).on('click', '.add-count', (event) => {
   console.log(event.currentTarget.id)

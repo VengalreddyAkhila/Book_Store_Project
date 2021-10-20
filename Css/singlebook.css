@@ -321,7 +321,7 @@ color: #FFFFFF;
        font: normal normal medium 12px/15px Lato;
   
     }
-@media screen and (min-device-width:801px) and (max-device-width:1024px) {
+@media screen and (min-device-width:901px) and (max-device-width:1024px) {
         input{
             width: 30%;
             margin-left: 10%;
@@ -352,7 +352,8 @@ color: #FFFFFF;
         }
        
     }
-@media screen and (min-device-width:601px) and (max-device-width:800px) {
+   
+@media screen and (min-device-width:701px) and (max-device-width:800px) {
         input{
             width: 20%;
             margin-left: 10%;
@@ -396,6 +397,27 @@ color: #FFFFFF;
         }
         .quan{
             padding-top: 4px;
+        }
+    }
+    @media screen and (max-width:700px) {
+        .books1{
+            width: 50%;
+        }
+        
+        .book-text1{
+           
+            padding-left: 10%;
+            width: 60%;
+        }
+        .rating1{
+            width: 15%;
+            height: 1%;
+        }
+        .Addtobag{
+            width: 50%;
+        }
+        .Whishlist{
+            width: 50%;
         }
     }
 @media screen  and (max-width:600px) {

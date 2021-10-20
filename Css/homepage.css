@@ -207,10 +207,15 @@ color: #FFFFFF;
             width: 25%;
         }
      }
-  
+
+ @media screen and (max-width:900px) {
+     .main-section{
+         width: 25%;
+     }
+ } 
 @media screen and (max-width:800px) and (min-width:600px) {
         .main-section{
-            width: 30%;
+            width: 40%;
         }       
         .pagination{
             margin-left: 20%;
@@ -249,6 +254,9 @@ color: #FFFFFF;
         }
         .footer{
             width: 100%;
+        }
+        .book-count-section{
+            padding-left: 25%;
         }
     }
     @media screen and (max-width:400px) {
